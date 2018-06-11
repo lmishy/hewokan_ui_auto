@@ -1,0 +1,25 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1528706730384" stop="1528706762242">
+  <name>test_001_forgetpwd</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1528706730384" status="passed" stop="1528706762242">
+      <name>test_forgetpwd</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9296-MainThread"/>
+        <label name="host" value="Lenovo-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython2"/>
+      </labels>
+      <steps>
+        <step start="1528706730457" status="passed" stop="1528706762238">
+          <name>忘记密码</name>
+          <title>忘记密码</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

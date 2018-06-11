@@ -1,0 +1,13 @@
+<bound method UiObject.get_text of <uiautomator2.UiObject object at 0x04240290>>
+hot_chinaonline 用例运行失败,请检查！
+Traceback (most recent call last):
+  File "po\ExcuteCase.py", line 22, in wrapper
+    func(*args, **kwargs)
+  File "d:\python27\lib\site-packages\allure\common.py", line 62, in impl
+    return func(*a, **kw)
+  File "D:\lzm-demo\ui_auto\testcase\test_008_hot_chinaonline.py", line 30, in hot_chinaonline
+    d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+  File "D:\Python27\lib\site-packages\uiautomator2\__init__.py", line 1425, in inner
+    'message': E(self.selector.__str__())
+UiObjectNotFoundError: -32002 Server error: <Selector [resourceId=u'com.chinamobile.cloudapp:id/videoPauseImg']> data: 
+

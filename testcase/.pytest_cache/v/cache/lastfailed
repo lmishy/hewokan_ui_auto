@@ -1,0 +1,5 @@
+{
+  "test_fixture.py::test_ehlo": true, 
+  "test_login.py::test_loginfail": true, 
+  "test_login.py::test_loginsucess": true
+}

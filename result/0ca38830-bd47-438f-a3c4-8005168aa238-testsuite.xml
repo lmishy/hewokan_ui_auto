@@ -1,0 +1,27 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1528707649871" stop="1528707689551">
+  <name>test_019_wode_fenxiang</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1528707649871" status="passed" stop="1528707689551">
+      <name>test_fengxiang</name>
+      <attachments>
+        <attachment source="4b6439fa-70fc-4399-a042-09b30b5d0f36-attachment.txt" title="Captured stdout call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9296-MainThread"/>
+        <label name="host" value="Lenovo-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython2"/>
+      </labels>
+      <steps>
+        <step start="1528707649892" status="failed" stop="1528707688766">
+          <name>我的--分享</name>
+          <title>我的--分享</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

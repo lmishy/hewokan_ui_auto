@@ -1,0 +1,12 @@
+aikan_xueersi 用例运行失败,请检查！
+Traceback (most recent call last):
+  File "po\ExcuteCase.py", line 22, in wrapper
+    func(*args, **kwargs)
+  File "d:\python27\lib\site-packages\allure\common.py", line 62, in impl
+    return func(*a, **kw)
+  File "D:\lzm-demo\ui_auto\testcase\test_015_aikan_xueersi.py", line 33, in aikan_xueersi
+    d(resourceId="com.chinamobile.cloudapp:id/episode_select_txt", text=u"15").click()
+  File "D:\Python27\lib\site-packages\uiautomator2\__init__.py", line 1425, in inner
+    'message': E(self.selector.__str__())
+UiObjectNotFoundError: -32002 Server error: <Selector [text=u'15', resourceId=u'com.chinamobile.cloudapp:id/episode_select_txt']> data: 
+

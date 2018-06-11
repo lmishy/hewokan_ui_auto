@@ -1,0 +1,25 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1528707798180" stop="1528707826199">
+  <name>test_022_wode_kaquan</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1528707798180" status="passed" stop="1528707826199">
+      <name>test_kaquan</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9296-MainThread"/>
+        <label name="host" value="Lenovo-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython2"/>
+      </labels>
+      <steps>
+        <step start="1528707798195" status="passed" stop="1528707826192">
+          <name>我的--我的卡券</name>
+          <title>我的--我的卡券</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

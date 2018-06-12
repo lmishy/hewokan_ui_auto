@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/hewokan_ui_auto.iml" filepath="$PROJECT_DIR$/.idea/hewokan_ui_auto.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/ui_auto.iml" filepath="$PROJECT_DIR$/.idea/ui_auto.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-## ui_auto配置文档
+## hewokan_ui_auto配置文档
 
 #### 安装node
 
@@ -35,8 +35,8 @@ uiautomator-server 、atx-agent、openstf/minicap、openstf/minitouch
 
 
 * git 源码
-* cd ui_auto
-* python main.py
+* cd hewokan_ui_auto
+* py.test -m testcase/
 
 
 

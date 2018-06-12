@@ -33,9 +33,6 @@ def login_yi():
     else:
         raise Exception(u"出错了，没有登录手机号！")
 
-
-
-
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")

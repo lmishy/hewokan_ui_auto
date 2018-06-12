@@ -24,7 +24,7 @@ def login_thd():
     d(text=u"微信账号登录").click()
     sleep(5)
     d.press("back")
-    #d.press("back")
+    d.press("back")
 
     # 新浪
     sleep(2)

@@ -4,6 +4,7 @@
 
 import uiautomator2 as u2
 from time import sleep
+import time
 from po import proxy,ExcuteCase as E
 import pytest
 import allure
@@ -25,13 +26,18 @@ def wode_fenxiang():
     d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click()
     sleep(2)
     #邀请记录
-    d(resourceId="com.chinamobile.cloudapp:id/invitation_reward_record_btn").click()
+    d(resourceId="btn1").click()
     sleep(2)
+    assert d(description=u"用户名").exists == True
+
     d.press("back")
     sleep(2)
     #分享邀请好友
-    d(resourceId="com.chinamobile.cloudapp:id/invitation_reward_share_btn").click()
+    d(resourceId="inviteBtn").click()
     sleep(2)
+    d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click()
+    sleep(2)
+    d.press("back")
     d.press("back")
     d.press("back")
     sleep(5)
@@ -44,6 +50,6 @@ def test_fengxiang():
 
 if __name__ == "__main__":
     # str = proxy.url
-    # wode_fenxiang(str)
-    pytest.main()
+    wode_fenxiang()
+    # pytest.main("test_019_wode_fenxiang.py")
 

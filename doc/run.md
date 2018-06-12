@@ -38,6 +38,8 @@ uiautomator-server 、atx-agent、openstf/minicap、openstf/minitouch
 * cd hewokan_ui_auto
 * py.test -m testcase/
 
+###如果不在一个网段，则需要一个转发的过程
+adb forward tcp:7912 tcp:7912
 
 
 

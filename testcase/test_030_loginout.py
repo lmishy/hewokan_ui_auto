@@ -21,7 +21,11 @@ def login_out():
     sleep(5)
 
     d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
-    d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
+    if(d(resourceId="com.chinamobile.cloudapp:id/login_out").exists):
+        d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
+
+    else:
+        raise Exception(u"退出按钮不存在！")
 
     sleep(10)
     # 停止app

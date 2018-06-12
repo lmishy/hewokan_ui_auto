@@ -1,9 +1,11 @@
 #coding=utf-8
 import uiautomator2 as u2
+import atx
 from time import sleep
 from po import proxy,ExcuteCase as E
 import pytest
 import allure
+
 
 @E.E
 @allure.step('忘记密码')

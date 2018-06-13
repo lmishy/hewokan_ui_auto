@@ -9,7 +9,8 @@ import allure
 
 @E.E
 @allure.step('爱看--阿里体育')
-def aikan_alitiyu(str):
+def test_aikan_alitiyu():
+    str = proxy.url
     #连接手机
     d = u2.connect(str)
 
@@ -58,6 +59,5 @@ def aikan_alitiyu(str):
     d.app_stop("com.chinamobile.cloudapp")
 
 if __name__=="__main__":
-    str = proxy.url
-    aikan_alitiyu(str)
+    pytest.main()
 

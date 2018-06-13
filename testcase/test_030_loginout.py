@@ -10,7 +10,7 @@ import allure
 
 
 @E.E
-@allure.step("手机登录")
+@allure.step("退出登录")
 def login_out():
     str = proxy.url
     d = u2.connect(str)

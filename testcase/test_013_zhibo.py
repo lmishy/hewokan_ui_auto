@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('直播页面')
-def zhibo():
+def test_zhibo():
     str = proxy.url
     d = u2.connect(str)
 
@@ -16,6 +16,8 @@ def zhibo():
 
     # 切换直播tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_2").click()
+    sleep(2)
+    assert d(text=u"本地").exists ==True
     sleep(2)
     d(text=u"本地").click()
     sleep(2)
@@ -39,11 +41,7 @@ def zhibo():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_zhibo():
-    zhibo()
 
 if __name__=="__main__":
-    # str = proxy.url
-    # zhibo(str)
     pytest.main()
 

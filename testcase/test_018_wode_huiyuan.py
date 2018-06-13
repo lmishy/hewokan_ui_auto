@@ -62,6 +62,4 @@ def test_huiyuan():
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_huiyuan(str)
     pytest.main()

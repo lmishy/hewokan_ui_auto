@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('影视--搜索')
-def yingshi_search():
+def test_yingshi_search():
     str = proxy.url
     #连接手机
     d = u2.connect(str)
@@ -65,11 +65,9 @@ def yingshi_search():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_yingshi_search():
-    yingshi_search()
+
 
 if __name__=="__main__":
-    # str = proxy.url
-    # yingshi_search(str)
-    pytest.main()
+    test_yingshi_search()
+    # pytest.main()
 

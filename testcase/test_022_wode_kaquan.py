@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--我的卡券')
-def wode_kaquan():
+def test_wode_kaquan():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -33,12 +33,8 @@ def wode_kaquan():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_kaquan():
-    wode_kaquan()
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_lishi(str)
     pytest.main()
 

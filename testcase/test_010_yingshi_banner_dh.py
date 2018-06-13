@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('影视--banner--导航')
-def yingshi_banner_dh():
+def test_yingshi_banner_dh():
     str = proxy.url
     #连接手机
     d = u2.connect(str)
@@ -29,42 +29,38 @@ def yingshi_banner_dh():
     sleep(2)
     #咪咕专区
     d(text=u"咪咕视频").click()
-    sleep(2)
+    sleep(5)
+    d(text=u"咪咕专区").wait(timeout=10)
+    assert d(text=u"咪咕专区").exists == True
     d.press("back")
     sleep(2)
     #芒果专区
     d(text=u"芒果TV").click()
-    sleep(2)
+    sleep(5)
+    assert d(text=u"芒果TV-精选").exists == True
     d.press("back")
     sleep(2)
     #百视通专区
     d(text=u"百视通").click()
-    sleep(2)
+    sleep(5)
+    assert d(text=u"百视通").exists == True
     d.press("back")
     #凤凰网
     d(text=u"凤凰网").click()
-    sleep(2)
+    sleep(5)
+    assert d(text=u"凤凰网专区").exists == True
     d.press("back")
     sleep(2)
-    #PPTV
-    d(text=u"PPTV").click()
-    sleep(2)
-    d.press("back")
-    sleep(2)
-    #魔百盒
-    d(text=u"魔百盒").click()
-    sleep(2)
-    d.press("back")
+    # #魔百盒
+    # d(text=u"魔百盒").click()
+    # sleep(2)
+    # d.press("back")
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_yingshi_banner():
-    yingshi_banner_dh()
-
 if __name__=="__main__":
-    # str = proxy.url
-    # yingshi_banner_dh(str)
-    pytest.main()
+    test_yingshi_banner_dh()
+    # pytest.main()
 

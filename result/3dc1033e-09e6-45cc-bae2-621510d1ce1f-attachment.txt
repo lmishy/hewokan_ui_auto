@@ -1,8 +1,0 @@
-wode_qita 用例运行失败,请检查！
-Traceback (most recent call last):
-  File "po\ExcuteCase.py", line 22, in wrapper
-    func(*args, **kwargs)
-  File "d:\python27\lib\site-packages\allure\common.py", line 62, in impl
-    return func(*a, **kw)
-TypeError: wode_qita() takes exactly 1 argument (0 given)
-

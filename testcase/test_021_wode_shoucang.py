@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--我的收藏')
-def wode_shoucang():
+def test_wode_shoucang():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -58,12 +58,8 @@ def wode_shoucang():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_shoucang():
-    wode_shoucang()
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_lishi(str)
     pytest.main()
 

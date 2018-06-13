@@ -11,7 +11,7 @@ import allure
 
 @E.E
 @allure.step('我的--分享')
-def wode_fenxiang():
+def test_wode_fenxiang():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -44,12 +44,8 @@ def wode_fenxiang():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_fengxiang():
-    wode_fenxiang()
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    wode_fenxiang()
-    # pytest.main("test_019_wode_fenxiang.py")
+    pytest.main("test_019_wode_fenxiang.py")
 

@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--关于我们')
-def wode_guanyu():
+def test_wode_guanyu():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -50,12 +50,9 @@ def wode_guanyu():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_guanyu():
-    wode_guanyu()
+
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_fankui(str)
     pytest.main()
 

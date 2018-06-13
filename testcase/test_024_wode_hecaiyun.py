@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--和彩云')
-def wode_hecaiyun():
+def test_wode_hecaiyun():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -34,13 +34,7 @@ def wode_hecaiyun():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_hecaiyun():
-    wode_hecaiyun()
-
-
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_hecaiyun(str)
     pytest.main()
 

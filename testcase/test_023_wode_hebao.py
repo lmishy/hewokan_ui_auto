@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--和包')
-def wode_hebao():
+def test_wode_hebao():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -28,11 +28,7 @@ def wode_hebao():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_hebao():
-    wode_hebao()
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_hebao(str)
     pytest.main()
 

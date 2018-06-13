@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('一键登录')
-def login_yi():
+def test_login_yi():
     str = proxy.url
     d = u2.connect(str)
 
@@ -27,23 +27,20 @@ def login_yi():
     sleep(5)
     if d(text=u"个人中心").exists:
         sleep(5)
+        assert d(text=u"个人中心").exists==True
         d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
         d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
-
     else:
+        assert d(text=u"登录和我看").exists == True
         raise Exception(u"出错了，没有登录手机号！")
 
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_login_yi():
-    login_yi()
 
 
 if __name__=="__main__":
-    # str = proxy.url
-    # login_yi(str)
     pytest.main()
 
 

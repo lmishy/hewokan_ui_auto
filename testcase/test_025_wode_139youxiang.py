@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--139邮箱')
-def wode_139youxiang():
+def test_wode_139youxiang():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -30,12 +30,8 @@ def wode_139youxiang():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_139youxiang():
-    wode_139youxiang()
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_139youxiang(str)
     pytest.main()
 

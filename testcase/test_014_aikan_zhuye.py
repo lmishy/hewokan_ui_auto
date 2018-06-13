@@ -18,24 +18,29 @@ def aikan_zhuye():
     #切换爱看tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
     sleep(2)
+    assert d(text=u"视频彩铃").exists == True
     #视频彩铃
     d(text=u"视频彩铃").click()
-    sleep(2)
+    sleep(5)
+    assert d(text=u"VoLTE视频彩铃").exists == True
     d.press("back")
     sleep(2)
     #学而思
     d(text=u"学而思").click()
     sleep(2)
+    assert d(text=u"学而思").exists == True
     d.press("back")
     sleep(2)
     #阿里体育
     d(text=u"阿里体育").click()
     sleep(2)
+    assert d(text=u"阿里体育").exists == True
     d.press("back")
     sleep(2)
     #精品教育
     d(text=u"精品教育").click()
     sleep(2)
+    assert d(text=u"精品教育").exists == True
     d.press("back")
     sleep(2)
     #换一换两次
@@ -58,11 +63,6 @@ def aikan_zhuye():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_aikan_zhuye():
-    aikan_zhuye()
-
 if __name__=="__main__":
-    # str = proxy.url
-    # aikan_zhuye(str)
     pytest.main()
 

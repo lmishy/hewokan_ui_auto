@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('爱看--学而思')
-def aikan_xueersi():
+def test_aikan_xueersi():
     str = proxy.url
     #连接手机
     d = u2.connect(str)
@@ -20,7 +20,8 @@ def aikan_xueersi():
     sleep(2)
     #学而思
     d(text=u"学而思").click()
-    sleep(2)
+    sleep(5)
+    assert d(text=u"学而思").exists == True
     #播放节目
     d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
     sleep(5)
@@ -37,11 +38,7 @@ def aikan_xueersi():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_aikan_xueersi():
-    aikan_xueersi()
 
 if __name__=="__main__":
-    # str = proxy.url
-    # aikan_xueersi(str)
     pytest.main()
 

@@ -9,7 +9,7 @@ import allure
 
 @E.E
 @allure.step('我的--设置')
-def wode_shezhi():
+def test_wode_shezhi():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
@@ -53,12 +53,8 @@ def wode_shezhi():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_shezhi():
-    wode_shezhi()
 
 
 if __name__ == "__main__":
-    # str = proxy.url
-    # wode_shezhi(str)
     pytest.main()
 

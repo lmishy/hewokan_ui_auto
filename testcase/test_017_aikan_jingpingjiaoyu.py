@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('爱看--精品教育')
-def aikan_jingpinjiaoyu():
+def test_aikan_jingpinjiaoyu():
     str = proxy.url
     #连接手机
     d = u2.connect(str)
@@ -67,11 +67,8 @@ def aikan_jingpinjiaoyu():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_aikan_jingpinjiaoyu():
-    aikan_jingpinjiaoyu()
 
 if __name__=="__main__":
-    # str = proxy.url
-    # aikan_alitiyu(str)
-    pytest
+
+    pytest.main()
 

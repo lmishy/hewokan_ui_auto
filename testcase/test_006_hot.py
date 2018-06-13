@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('热点页面--banner--导航')
-def hot():
+def test_hot():
     str = proxy.url
     d = u2.connect(str)
 
@@ -57,6 +57,8 @@ def hot():
     sleep(2)
     if (d(description = u"未签到").exists):
         d(resourceId="headerUpP").click()
+        sleep(2)
+        assert d(description = u"未签到").exists == True
     else:
         pass
     sleep(2)
@@ -71,11 +73,9 @@ def hot():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_hot():
-    hot()
+
 
 if __name__=="__main__":
-    # str = proxy.url
-    # hot()
-    pytest.main()
+    # test_hot()
+    pytest.main("test_006_hot.py")
 

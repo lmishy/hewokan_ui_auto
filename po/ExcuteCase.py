@@ -17,7 +17,6 @@ d = u2.connect(str)
 def E(func):
     def wrapper(*args, **kwargs):
         error_msg = True
-        #T1= time.time()
         try:
             func(*args, **kwargs)
         except Exception as e:
@@ -26,7 +25,7 @@ def E(func):
             print(error_msg)
             d.app_stop("com.chinamobile.cloudapp")
         # finally:
-        #     print "结果是:",
+        #     d.app_stop("com.chinamobile.cloudapp")
 
     return wrapper
 #return E

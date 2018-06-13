@@ -8,7 +8,7 @@ import allure
 
 @E.E
 @allure.step("手机登录")
-def login(user,pwd):
+def test_loginfail():
     str = proxy.url
     d = u2.connect(str)
     # 启动App
@@ -19,19 +19,26 @@ def login(user,pwd):
     d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
     sleep(2)
     # 输入手机号码
-    d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text(user)
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('18428027801')
     sleep(2)
     # 输入错误密码
-    d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text(pwd)
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('123245')
     sleep(2)
     # 登录
     d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
-    #return d.info()
     sleep(5)
-    #if d(resourceId="com.chinamobile.cloudapp:id/button_login").wait(10)
-
-    #d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
-    #d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
+    assert d(text=u"登录和我看").exists == True
+    sleep(2)
+    # 输入手机号码
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('18428027801')
+    sleep(2)
+    # 输入正确密码
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('qqq111')
+    sleep(2)
+    # 登录
+    d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
+    sleep(5)
+    assert d(text=u"个人中心").exists == True
 
     sleep(10)
     # 停止app
@@ -39,15 +46,8 @@ def login(user,pwd):
 
 
 
-def test_loginfail():
-    login('18428027801','123245')
-
-def test_loginsuccess():
-    login('18428027801','qqq111')
 
 if __name__=="__main__":
-    # str = proxy.url
-    # login(str)
-    pytest.main()
+    pytest.main("test_005_login.py")
 
 

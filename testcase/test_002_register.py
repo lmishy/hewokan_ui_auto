@@ -7,9 +7,11 @@ from po import ExcuteCase as E, proxy
 import pytest
 import allure
 
+
+
 @E.E
 @allure.step('注册功能')
-def register():
+def test_register():
     str = proxy.url
     d = u2.connect(str)
 
@@ -19,11 +21,12 @@ def register():
     # 我的
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
     sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+    d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=5)
     sleep(2)
     # 立即注册
     d(resourceId="com.chinamobile.cloudapp:id/tv_registing").click()
     sleep(2)
+    assert d(text=u"注册").exists
     # 输入手机号
     d(resourceId="com.chinamobile.cloudapp:id/et_phone").set_text("18278987897")
     sleep(2)
@@ -36,18 +39,14 @@ def register():
     # 下一步
     d(resourceId="com.chinamobile.cloudapp:id/btn_next").click()
     sleep(2)
+    assert d(text=u"获取验证码").exists==True
     # 获取验证码
     #d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click()
-
     sleep(5)
-
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_register():
-    register()
+
 
 if __name__=="__main__":
-    # str = proxy.url
-    # register(str)
-    pytest.main()
+    pytest.main("test_002_register.py")

@@ -8,30 +8,41 @@ import allure
 
 @E.E
 @allure.step("热点--视频彩铃")
-def hot_cailing():
+def test_cailing():
     str = proxy.url
     d = u2.connect(str)
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    # 切换到爱看
+    d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
     #进入彩铃
-    d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+    d(text=u"视频彩铃").click()
     sleep(2)
     assert d(text=u"VoLTE视频彩铃").exists==True
+    sleep(6)
     #首页banner
     d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=15.0)
+    sleep(3)
+    if (d(text=u"寻找萌王").exists):
+        d.press("back")
+    elif (d(text=u"	萌翻6月，寻找萌王").exists):
+        d.press("back")
+    else:
+        d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_dianzan").click()
+        sleep(2)
+        d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_set").click()
+        sleep(2)
+        d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_share").click()
+        sleep(2)
+        d.press("back")
+        sleep(2)
+        d.press("back")
+
     sleep(2)
-    assert d(resourceId="com.chinamobile.cloudapp:id/iv_phone_center").exists==True
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_dianzan").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_set").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_share").click()
-    sleep(2)
-    d.press("back")
-    sleep(2)
-    d.press("back")
+    assert d(text=u"VoLTE视频彩铃").exists == True
+
+
 
     #彩铃小常识
     d(text=u"视频彩铃小常识 >").click()
@@ -57,8 +68,8 @@ def hot_cailing():
 
     # 切换到呼叫
     d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_2").click()
-    sleep(2)
-    assert d(text=u"拔号键盘").exists ==True
+    sleep(5)
+    assert d(text=u"拔号键盘").exists == True
     sleep(1)
     d(resourceId="com.chinamobile.cloudapp:id/imageButton_1").click()
     sleep(1)
@@ -99,7 +110,7 @@ def hot_cailing():
 
     #广场
     d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_3").click()
-    sleep(2)
+    sleep(5)
     assert d(text=u"最新").exists == True
     sleep(2)
     d(text=u"最热").click()
@@ -181,11 +192,8 @@ def hot_cailing():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_hot_cailing():
-    hot_cailing()
 
 if __name__=="__main__":
-    # str = proxy.url
-    # hot_cailing()
-     pytest.main()
+    test_cailing()
+    # pytest.main("test_007_cailing.py")
 

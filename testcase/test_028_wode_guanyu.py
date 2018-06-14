@@ -26,11 +26,18 @@ def test_wode_guanyu():
     #关于我们
     d(text=u"关于我们").click()
     sleep(2)
+    assert d(text=u"关于").exists == True
+    sleep(2)
     d(text=u"应用简介").click()
     sleep(5)
+    assert d(text=u"应用简介").exists == True
+    sleep(2)
     d.press("back")
     sleep(2)
     d(text=u"用户协议").click()
+    sleep(2)
+    assert d(text=u"和我看用户协议").exists == True
+    sleep(2)
     # 向上滑动
     sleep(5)
     for i in range(5):
@@ -45,7 +52,10 @@ def test_wode_guanyu():
     sleep(2)
     d.press("back")
     sleep(2)
+    assert d(text=u"个人中心").exists == True
+    sleep(2)
     d.press("back")
+
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")

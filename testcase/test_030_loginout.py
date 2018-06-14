@@ -11,7 +11,7 @@ import allure
 
 @E.E
 @allure.step("退出登录")
-def login_out():
+def test_login_out():
     str = proxy.url
     d = u2.connect(str)
     # 启动App
@@ -23,7 +23,8 @@ def login_out():
     d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
     if(d(resourceId="com.chinamobile.cloudapp:id/login_out").exists):
         d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
-
+        sleep(2)
+        assert d(text="登录和我看").exists == True
     else:
         raise Exception(u"退出按钮不存在！")
 
@@ -32,12 +33,5 @@ def login_out():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-
-def test_login_out():
-    login_out()
-
-
 if __name__=="__main__":
-    # str = proxy.url
-    # login(str)
     pytest.main()

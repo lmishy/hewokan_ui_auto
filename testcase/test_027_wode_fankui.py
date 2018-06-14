@@ -26,6 +26,7 @@ def test_wode_fankui():
     # 设置
     d(text=u"意见反馈").click()
     sleep(2)
+    assert d(text=u"意见反馈").exists == True
     #输入文字
     d(resourceId="com.chinamobile.cloudapp:id/editText").set_text("APP很好，就是有些慢")
     sleep(2)

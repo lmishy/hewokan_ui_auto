@@ -9,7 +9,8 @@ import allure
 
 @E.E
 @allure.step('我的--签到--换头像')
-def test_wode_qita(str):
+def test_wode_qita():
+    str = proxy.url
     # 连接手机
     d = u2.connect(str)
 
@@ -32,6 +33,7 @@ def test_wode_qita(str):
     sleep(2)
     d.press("back")
     sleep(2)
+    #签到
     d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
     sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/textView3").click()

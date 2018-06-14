@@ -7,7 +7,7 @@ import allure
 
 @E.E
 @allure.step('爱看——主页')
-def aikan_zhuye():
+def test_aikan_zhuye():
     str = proxy.url
     #连接手机
     d = u2.connect(str)

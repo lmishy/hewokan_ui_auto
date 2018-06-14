@@ -37,7 +37,7 @@ def test_loginfail():
     sleep(2)
     # 登录
     d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
-    sleep(5)
+    sleep(10)
     assert d(text=u"个人中心").exists == True
 
     sleep(10)

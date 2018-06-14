@@ -19,18 +19,18 @@ def test_aikan_alitiyu():
 
     #切换爱看tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
-    sleep(2)
+    sleep(10)
     #阿里体育
     d(text=u"阿里体育").click()
     sleep(2)
     #播放实时直播
     d(resourceId="com.chinamobile.cloudapp:id/image_mid", className="android.widget.ImageView", instance=2).click()
-    sleep(2)
+    sleep(10)
     d.press("back")
     sleep(2)
     #精彩集锦
     d(resourceId="com.chinamobile.cloudapp:id/image_mid", className="android.widget.ImageView", instance=2).click()
-    sleep(2)
+    sleep(10)
     d.press("back")
     sleep(2)
     #向上滑动三次
@@ -40,7 +40,7 @@ def test_aikan_alitiyu():
 
     #3X3联赛广州站
     d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
-    sleep(5)
+    sleep(10)
     d.press("back")
     sleep(2)
 
@@ -51,7 +51,7 @@ def test_aikan_alitiyu():
 
     #激情拉拉队
     d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
-    sleep(5)
+    sleep(10)
     d.press("back")
 
     sleep(5)

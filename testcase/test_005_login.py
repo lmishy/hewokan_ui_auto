@@ -30,10 +30,10 @@ def test_loginfail():
     assert d(text=u"登录和我看").exists == True
     sleep(2)
     # 输入手机号码
-    d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('18428027801')
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('13981817893')
     sleep(2)
     # 输入正确密码
-    d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('qqq111')
+    d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('zhou1xin')
     sleep(2)
     # 登录
     d(resourceId="com.chinamobile.cloudapp:id/button_login").click()

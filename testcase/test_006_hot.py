@@ -33,24 +33,24 @@ def test_hot():
     sleep(2)
     d.press("back")
 
-    # 热门榜单
-    d(text=u"精彩专题").click()
-    sleep(2)
-    assert d(text=u"精选专题").exists ==True
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
-    sleep(2)
-    assert d(resourceId="com.chinamobile.cloudapp:id/iv_coll").exists == True
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/iv_coll").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/iv_share").click()
-    sleep(2)
-    d.press("back")
-    sleep(2)
-    d.press("back")
-    sleep(2)
-    d.press("back")
+    # # 热门榜单
+    # d(text=u"精彩专题").click()
+    # sleep(2)
+    # assert d(text=u"精选专题").exists ==True
+    # sleep(2)
+    # d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+    # sleep(2)
+    # assert d(resourceId="com.chinamobile.cloudapp:id/iv_coll").exists == True
+    # sleep(2)
+    # d(resourceId="com.chinamobile.cloudapp:id/iv_coll").click()
+    # sleep(2)
+    # d(resourceId="com.chinamobile.cloudapp:id/iv_share").click()
+    # sleep(2)
+    # d.press("back")
+    # sleep(2)
+    # d.press("back")
+    # sleep(2)
+    # d.press("back")
 
     #签到有礼
     d(text=u"签到有礼").click()

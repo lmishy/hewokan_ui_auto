@@ -20,6 +20,7 @@ def test_wode_qita():
     # 切换我的tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
     sleep(2)
+    assert d(text=u"个人中心").exists == True
     # 换头像
     d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
     sleep(2)
@@ -32,23 +33,21 @@ def test_wode_qita():
     d(resourceId="com.chinamobile.cloudapp:id/textView2").click()
     sleep(2)
     d.press("back")
+    assert d(text=u"个人中心").exists ==True
     sleep(2)
     #签到
-    d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+    d(resourceId="com.chinamobile.cloudapp:id/sign_button").click()
     sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/textView3").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/sign_txt").click()
-    sleep(2)
-    d(resourceId="headerUpP").click()
-    sleep(2)
-    d.press("back")
-
+    if(d(text=u"未签到").exists):
+        d(resourceId="headerUpP").click()
+        sleep(2)
+        assert d(text=u"已签到").exists == True
+    else:
+        d.press("back")
 
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
-
 
 
 if __name__ == "__main__":

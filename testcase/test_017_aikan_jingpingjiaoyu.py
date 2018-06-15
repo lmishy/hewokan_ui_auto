@@ -21,13 +21,6 @@ def test_aikan_jingpinjiaoyu():
     #精品教育
     d(text=u"精品教育").click()
     sleep(5)
-    #首页
-    d(text=u"首页").click()
-    sleep(2)
-    #向上滑动三次次
-    for i in range(3):
-        d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
-        sleep(1)
 
     #幼儿
     d(text=u"幼儿").click()
@@ -69,6 +62,6 @@ def test_aikan_jingpinjiaoyu():
 
 
 if __name__=="__main__":
-
-    pytest.main()
+    test_aikan_jingpinjiaoyu()
+    # pytest.main()
 

@@ -84,7 +84,7 @@ def test_yingshi_jjsy_xpsd_zbrb():
     d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
     #点击任意一个节目
     d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click()
-    sleep(2)
+    sleep(5)
     d.press("back")
     #换一换
     sleep(5)

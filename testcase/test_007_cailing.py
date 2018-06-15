@@ -24,9 +24,9 @@ def test_cailing():
     #首页banner
     d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=15.0)
     sleep(3)
-    if (d(text=u"寻找萌王").exists):
+    if (d(text=u"视频彩铃").exists):
         d.press("back")
-    elif (d(text=u"	萌翻6月，寻找萌王").exists):
+    elif (d(text=u"视频彩铃流量福利社").exists):
         d.press("back")
     else:
         d(resourceId="com.chinamobile.cloudapp:id/iv_callshow_dianzan").click()
@@ -94,7 +94,7 @@ def test_cailing():
     d(resourceId="com.chinamobile.cloudapp:id/imageButton_1").click()
     sleep(1)
     d(resourceId="com.chinamobile.cloudapp:id/imageButton_call").click()
-    sleep(1)
+    sleep(3)
     d(resourceId="com.chinamobile.cloudapp:id/iv_phone_center").click()
 
 
@@ -115,8 +115,8 @@ def test_cailing():
     sleep(2)
     d(text=u"最热").click()
     sleep(2)
-    d(text=u"最萌").click()
-    sleep(2)
+    # d(text=u"最萌").click()
+    # sleep(2)
 
     #我的
     d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_4").click()
@@ -152,6 +152,7 @@ def test_cailing():
         sleep(2)
         d.press("back")
     sleep(5)
+    d.press("back")
 
     #我的点赞
     d(text=u"我的点赞").click()

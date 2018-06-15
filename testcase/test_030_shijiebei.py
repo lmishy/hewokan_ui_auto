@@ -8,8 +8,8 @@ import pytest
 import allure
 
 @E.E
-@allure.step('热点--限免')
-def test_xianmian():
+@allure.step('热点--世界杯专区')
+def test_shijiebei():
     str = proxy.url
     d = u2.connect(str)
 
@@ -97,5 +97,6 @@ def test_xianmian():
 
 
 if __name__=="__main__":
-    pytest.main("test_030_shijiebei.py")
+    test_shijiebei()
+    # pytest.main("test_030_shijiebei.py")
 

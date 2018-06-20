@@ -22,7 +22,7 @@ def test_wode_kaquan():
     sleep(2)
     # 我的卡劵
     d(text=u"我的卡劵").click()
-    sleep(2)
+    sleep(5)
     d(description=u"已使用").click()
     sleep(2)
     d(description=u"已过期").click()

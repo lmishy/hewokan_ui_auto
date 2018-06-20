@@ -15,6 +15,7 @@ def test_zhibo():
     d.app_start("com.chinamobile.cloudapp1")
 
     # 切换直播tab
+    sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_2").click()
     sleep(2)
     assert d(text=u"本地").exists ==True
@@ -29,11 +30,11 @@ def test_zhibo():
     sleep(2)
     d(text=u"主播").click()
     sleep(2)
-    d(className="com.tencent.tbs.core.webkit.WebView").click()
+    d(description=u"我的关注").click()
     sleep(2)
     d(text=u"演唱会").click()
     sleep(2)
-    d(className="com.tencent.tbs.core.webkit.WebView").click()
+    d(description=u"往期回看").click()
     sleep(2)
 
     sleep(5)
@@ -43,5 +44,6 @@ def test_zhibo():
 
 
 if __name__=="__main__":
+    # test_zhibo()
     pytest.main()
 

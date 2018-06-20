@@ -8,7 +8,7 @@ import allure
 
 @E.E
 @allure.step("手机登录")
-def test_loginfail():
+def test_login():
     str = proxy.url
     d = u2.connect(str)
     # 启动App
@@ -48,6 +48,7 @@ def test_loginfail():
 
 
 if __name__=="__main__":
+    # test_login()
     pytest.main("test_005_login.py")
 
 

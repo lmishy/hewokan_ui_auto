@@ -60,6 +60,6 @@ def test_aikan_alitiyu():
     d.app_stop("com.chinamobile.cloudapp")
 
 if __name__=="__main__":
-    test_aikan_alitiyu()
-    # pytest.main()
+    # test_aikan_alitiyu()
+    pytest.main()
 

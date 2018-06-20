@@ -46,7 +46,7 @@ def test_login_thd():
     assert d(resourceId="com.tencent.mobileqq:id/name", className="android.widget.ImageView").exists == True
     d.press("back")
 
-    assert d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").get_text=="登录和我看"
+    assert d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").get_text() == u"登录和我看"
 
     sleep(3)
     # 停止app
@@ -55,5 +55,6 @@ def test_login_thd():
 
 
 if __name__=="__main__":
+    # test_login_thd()
     pytest.main("test_004_login_thd.py")
 

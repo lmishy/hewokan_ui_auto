@@ -39,15 +39,10 @@ def test_yingshi_search():
     d(resourceId="com.chinamobile.cloudapp:id/et_content").set_text("萝莉")
     sleep(5)
     d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
-    sleep(2)
-    d.press("back")
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/textView", text=u"1.唐人街探案2").click()
     sleep(5)
     d.press("back")
     sleep(2)
-    d.press("back")
-    sleep(2)
+
     # 搜索功能-英文
     d(resourceId="com.chinamobile.cloudapp:id/et_content").set_text("boy")
     sleep(2)
@@ -55,6 +50,8 @@ def test_yingshi_search():
     sleep(5)
     d.press("back")
     sleep(2)
+
+    #搜索功能-推荐
     d(resourceId="com.chinamobile.cloudapp:id/textView", text=u"1.唐人街探案2").click()
     sleep(2)
     d.press("back")
@@ -68,6 +65,6 @@ def test_yingshi_search():
 
 
 if __name__=="__main__":
-    test_yingshi_search()
-    # pytest.main()
+    # test_yingshi_search()
+    pytest.main()
 

@@ -24,7 +24,7 @@ def test_login_out():
     if(d(resourceId="com.chinamobile.cloudapp:id/login_out").exists):
         d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
         sleep(2)
-        assert d(text="登录和我看").exists == True
+        assert d(text=u"登录和我看").exists == True
     else:
         raise Exception(u"退出按钮不存在！")
 

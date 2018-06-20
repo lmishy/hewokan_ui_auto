@@ -35,7 +35,7 @@ def test_wode_guanyu():
     d.press("back")
     sleep(2)
     d(text=u"用户协议").click()
-    sleep(2)
+    sleep(5)
     assert d(text=u"和我看用户协议").exists == True
     sleep(2)
     # 向上滑动
@@ -64,5 +64,6 @@ def test_wode_guanyu():
 
 
 if __name__ == "__main__":
+    # test_wode_guanyu()
     pytest.main()
 

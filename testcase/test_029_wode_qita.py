@@ -23,7 +23,7 @@ def test_wode_qita():
     assert d(text=u"个人中心").exists == True
     # 换头像
     d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
-    sleep(2)
+    sleep(5)
     d(resourceId="com.chinamobile.cloudapp:id/textView1").click()
     sleep(2)
     d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").click()
@@ -51,5 +51,6 @@ def test_wode_qita():
 
 
 if __name__ == "__main__":
+    # test_wode_qita()
     pytest.main()
 

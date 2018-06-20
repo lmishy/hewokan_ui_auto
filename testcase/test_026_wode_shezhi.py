@@ -27,6 +27,7 @@ def test_wode_shezhi():
     d(text=u"设置").click()
     sleep(2)
     assert  d(text=u"设置").exists == True
+    sleep(5)
     #修改密码
     d(resourceId="com.chinamobile.cloudapp:id/layout_change_psd").click()
     sleep(2)

@@ -17,8 +17,11 @@ def test_hot():
     # 热点banner
     d(resourceId="com.chinamobile.cloudapp:id/image").click()
     sleep(5)
-    assert d(resourceId="com.chinamobile.cloudapp:id/video_back").exists == True
-    d.press("back")
+    if(d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_left_return").exists):
+        d.press("back")
+    else:
+        assert d(resourceId="com.chinamobile.cloudapp:id/video_back").exists == True
+        d.press("back")
 
     #热门榜单
     d(text=u"热门榜单").click()
@@ -27,47 +30,28 @@ def test_hot():
     sleep(2)
     d(text=u"电视剧").click()
     sleep(2)
-    d(text=u"综艺").click()
-    sleep(2)
     d(text=u"动漫").click()
     sleep(2)
     d.press("back")
-
-    # # 热门榜单
-    # d(text=u"精彩专题").click()
-    # sleep(2)
-    # assert d(text=u"精选专题").exists ==True
-    # sleep(2)
-    # d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
-    # sleep(2)
-    # assert d(resourceId="com.chinamobile.cloudapp:id/iv_coll").exists == True
-    # sleep(2)
-    # d(resourceId="com.chinamobile.cloudapp:id/iv_coll").click()
-    # sleep(2)
-    # d(resourceId="com.chinamobile.cloudapp:id/iv_share").click()
-    # sleep(2)
-    # d.press("back")
-    # sleep(2)
-    # d.press("back")
-    # sleep(2)
-    # d.press("back")
 
     #签到有礼
     d(text=u"签到有礼").click()
     sleep(2)
     if (d(description = u"未签到").exists):
         d(resourceId="headerUpP").click()
-        sleep(2)
+        sleep(5)
         assert d(description = u"未签到").exists == True
     else:
         pass
     sleep(2)
     d.press("back")
 
+    '''
     #福利社区
     d(text=u"福利社区").click()
     sleep(2)
     d.press("back")
+    '''
     sleep(5)
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")

@@ -34,7 +34,7 @@ def test_hot_xihuan_cangxian():
     d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=4).click()
     sleep(5)
     d.press("back")
-    sleep(2)
+    sleep(3)
     d(text=u"换一换").click()
     sleep(2)
 
@@ -76,6 +76,6 @@ def test_hot_xihuan_cangxian():
 
 
 if __name__=="__main__":
-    test_hot_xihuan_cangxian()
-    # pytest.main()
+    # test_hot_xihuan_cangxian()
+    pytest.main()
 

@@ -35,10 +35,11 @@ def test_register():
     sleep(2)
     # 同意协议
     d(resourceId="com.chinamobile.cloudapp:id/cb_agreement").click()
-    sleep(2)
+    sleep(5)
     # 下一步
-    d(resourceId="com.chinamobile.cloudapp:id/btn_next").click()
-    sleep(2)
+    d(text=u'下一步').click()
+    sleep(5)
+
     assert d(text=u"获取验证码").exists==True
     # 获取验证码
     #d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click()
@@ -49,4 +50,5 @@ def test_register():
 
 
 if __name__=="__main__":
-    pytest.main("test_002_register.py")
+    test_register()
+    # pytest.main("test_002_register.py")

@@ -61,6 +61,6 @@ def test_yingshi_banner_dh():
 
 
 if __name__=="__main__":
-    test_yingshi_banner_dh()
-    # pytest.main()
+    # test_yingshi_banner_dh()
+    pytest.main()
 

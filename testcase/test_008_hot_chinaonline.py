@@ -8,7 +8,7 @@ import allure
 
 @E.E
 @allure.step("热点--ChinaOnline")
-def hot_chinaonline():
+def test_hot_chinaonline():
     str = proxy.url
     d = u2.connect(str)
 
@@ -29,7 +29,10 @@ def hot_chinaonline():
         # 列表内容
         d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
         sleep(2)
-        d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+        if(d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").exists):
+            d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+        else:
+            pass
         sleep(5)
         d.press("back")
         d.press("back")
@@ -98,11 +101,9 @@ def hot_chinaonline():
     d.app_stop("com.chinamobile.cloudapp")
 
 
-def test_hot_chinaonline():
-    hot_chinaonline()
+
 
 if __name__=="__main__":
-    # str = proxy.url
-    hot_chinaonline()
-    # pytest.main()
+    # test_hot_chinaonline()
+    pytest.main()
 

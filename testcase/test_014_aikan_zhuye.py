@@ -64,5 +64,6 @@ def test_aikan_zhuye():
 
 
 if __name__=="__main__":
+    # test_aikan_zhuye()
     pytest.main()
 

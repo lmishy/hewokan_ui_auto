@@ -23,9 +23,9 @@ def test_shijiebei():
     sleep(5)
     #点击banner
     if(d(resourceId="com.chinamobile.cloudapp:id/image").exists):
-        d(resourceId="com.chinamobile.cloudapp:id/image").click()
-        sleep(5)
-        if (d(text=u"咪咕钻石会员-超级视频").exists):
+        d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=10)
+        d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").wait(timeout=10)
+        if (d(text=u"咪咕钻石会员-超级视频").exists()):
             sleep(5)
             d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(2)
@@ -49,7 +49,7 @@ def test_shijiebei():
             d(resourceId="myguess").click(timeout=5)
             d.press("back")
         else:
-            raise Exception(u"页面请求过长！")
+            raise Exception(u"页面时间请求过长！")
 
     else:
         raise Exception(u"页面请求时间过长，请检查！")

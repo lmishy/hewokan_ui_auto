@@ -25,7 +25,7 @@ def test_yingshi_jjsy_xpsd_zbrb():
     # 选择即将上映一个节目
     d(resourceId="com.chinamobile.cloudapp:id/cover_pic").click()
     sleep(5)
-    assert d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").exists ==True
+    #assert d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").exists ==True
     d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
     sleep(2)
     d.press("back")

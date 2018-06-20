@@ -29,7 +29,6 @@ def test_wode_fenxiang():
     d(resourceId="btn1").click()
     sleep(2)
     assert d(description=u"用户名").exists == True
-
     d.press("back")
     sleep(2)
     #分享邀请好友

@@ -14,6 +14,7 @@ def test_aikan_jingpinjiaoyu():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     #切换爱看tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
@@ -62,6 +63,6 @@ def test_aikan_jingpinjiaoyu():
 
 
 if __name__=="__main__":
-    test_aikan_jingpinjiaoyu()
-    # pytest.main()
+    # test_aikan_jingpinjiaoyu()
+    pytest.main()
 

@@ -104,6 +104,6 @@ def test_hot_chinaonline():
 
 
 if __name__=="__main__":
-    # test_hot_chinaonline()
-    pytest.main()
+    test_hot_chinaonline()
+    # pytest.main()
 

@@ -14,6 +14,7 @@ def test_aikan_zhuye():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(2)
 
     #切换爱看tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()

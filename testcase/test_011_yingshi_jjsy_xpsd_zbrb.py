@@ -18,6 +18,7 @@ def test_yingshi_jjsy_xpsd_zbrb():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 切换影视tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
@@ -100,6 +101,6 @@ def test_yingshi_jjsy_xpsd_zbrb():
 
 
 if __name__=="__main__":
-    # test_yingshi_jjsy_xpsd_zbrb()
-    pytest.main()
+    test_yingshi_jjsy_xpsd_zbrb()
+    # pytest.main()
 

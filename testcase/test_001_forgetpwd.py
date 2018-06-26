@@ -44,5 +44,6 @@ def test_forgetpwd():
 
 
 if __name__=="__main__":
-    pytest.main("test_001_forgetpwd.py")
+    test_forgetpwd()
+    # pytest.main("test_001_forgetpwd.py")
 

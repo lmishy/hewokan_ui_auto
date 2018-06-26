@@ -16,6 +16,7 @@ def test_yingshi_search():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     #切换影视tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
@@ -29,9 +30,13 @@ def test_yingshi_search():
     sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
     sleep(5)
-    d(resourceId="com.chinamobile.cloudapp:id/more").click()
-    sleep(2)
-    d.press("back")
+    if(d(resourceId="com.chinamobile.cloudapp:id/more").exists):
+        d(resourceId="com.chinamobile.cloudapp:id/more").click()
+        sleep(2)
+        d.press("back")
+    else:
+        pass
+        print(u"页面加载过长！")
     sleep(2)
     d.press("back")
     sleep(2)
@@ -65,6 +70,6 @@ def test_yingshi_search():
 
 
 if __name__=="__main__":
-    # test_yingshi_search()
-    pytest.main()
+    test_yingshi_search()
+    # pytest.main()
 

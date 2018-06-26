@@ -1,8 +1,6 @@
 #coding=utf-8
 import uiautomator2 as u2
 from time import sleep
-from po import proxy
-
 from po import ExcuteCase as E, proxy
 import pytest
 import allure
@@ -17,6 +15,7 @@ def test_register():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(2)
 
     # 我的
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
@@ -50,5 +49,5 @@ def test_register():
 
 
 if __name__=="__main__":
-    test_register()
-    # pytest.main("test_002_register.py")
+    # test_register()
+    pytest.main("test_002_register.py")

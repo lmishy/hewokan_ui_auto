@@ -16,6 +16,7 @@ def test_wode_guanyu():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 切换我的tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
@@ -64,6 +65,6 @@ def test_wode_guanyu():
 
 
 if __name__ == "__main__":
-    # test_wode_guanyu()
-    pytest.main()
+    test_wode_guanyu()
+    # pytest.main()
 

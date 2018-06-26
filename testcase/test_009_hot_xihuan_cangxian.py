@@ -17,13 +17,16 @@ def test_hot_xihuan_cangxian():
 
     # 向上滑动
     sleep(5)
-    for i in range(2):
+    for i in range(3):
         d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
         sleep(1)
     # 选择一个节目
     d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click()
     sleep(5)
-    d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+    if(d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").exists):
+        d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+    else:
+        pass
     sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
     sleep(2)

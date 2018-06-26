@@ -16,6 +16,7 @@ def test_yingshi_banner_dh():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     #切换影视tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()

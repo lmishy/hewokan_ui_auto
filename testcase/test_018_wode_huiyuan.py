@@ -9,13 +9,14 @@ import allure
 
 @E.E
 @allure.step('我的--会员')
-def wode_huiyuan():
+def test_wode_huiyuan():
     str = proxy.url
     # 连接手机
     d = u2.connect(str)
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 切换我的tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
@@ -33,23 +34,23 @@ def wode_huiyuan():
     d.press("back")
     sleep(2)
     # 芒果TV
-    d(resourceId="com.chinamobile.cloudapp:id/tv_vip_name", text=u"芒果TV").click()
+    d(resourceId="com.chinamobile.cloudapp:id/iv_logo", className="android.widget.ImageView", instance=1).click()
     sleep(2)
-    d(description=u"立即订购").click()
+    d(className="com.tencent.smtt.webkit.WebView").click()
     sleep(2)
     d.press("back")
     d.press("back")
 
     # 百视通VIP
-    d(resourceId="com.chinamobile.cloudapp:id/tv_vip_name", text=u"百视通VIP").click()
+    d(resourceId="com.chinamobile.cloudapp:id/iv_logo", className="android.widget.ImageView", instance=2).click()
     sleep(2)
-    d(description=u"立即订购").click()
+    d(className="com.tencent.smtt.webkit.WebView").click()
     sleep(2)
     d.press("back")
     d.press("back")
 
     # 咪咕会员VIP
-    d(resourceId="com.chinamobile.cloudapp:id/btn_order").click()
+    d(resourceId="com.chinamobile.cloudapp:id/iv_logo").click()
     d.press("back")
     d.press("back")
 
@@ -57,9 +58,9 @@ def wode_huiyuan():
     # 停止app
     d.app_stop("com.chinamobile.cloudapp")
 
-def test_huiyuan():
-    wode_huiyuan()
+
 
 
 if __name__ == "__main__":
+    # test_wode_huiyuan()
     pytest.main()

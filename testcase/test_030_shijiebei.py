@@ -15,6 +15,7 @@ def test_shijiebei():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 世界杯专区
     d(text=u"世界杯专区").click()
@@ -25,7 +26,7 @@ def test_shijiebei():
     if(d(resourceId="com.chinamobile.cloudapp:id/image").exists):
         d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=10)
         d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").wait(timeout=10)
-        if (d(text=u"咪咕钻石会员-超级视频").exists()):
+        if(d(text=u"咪咕钻石会员-超级视频").exists):
             sleep(5)
             d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(2)
@@ -35,21 +36,29 @@ def test_shijiebei():
             d(resourceId="close").click(timeout=5)
             d.press("back")
         elif (d(text=u"世界杯").exists):
-            #分享
-            d(resourceId="share").click(timeout=5)
-            d.press("back")
-            #活动规则
-            d(resourceId="rules").click(timeout=5)
-            d(resourceId="cover2").click(timeout=5)
-            #会员兑换
-            d(resourceId="exchange").click(timeout=5)
-            #大厅
-            d(resourceId="hall").click(timeout=5)
-            #我的竞猜
-            d(resourceId="myguess").click(timeout=5)
-            d.press("back")
+            if(d(resourceId="share").exists == False):
+                d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
+                # 分享
+                d(resourceId="share").click(timeout=5)
+                d.press("back")
+                # 活动规则
+                d(resourceId="rules").click(timeout=5)
+                d(resourceId="cover2").click(timeout=5)
+                # 会员兑换
+                d(resourceId="exchange").click(timeout=5)
+                # 大厅
+                d(resourceId="hall").click(timeout=5)
+                # 我的竞猜
+                d(resourceId="myguess").click(timeout=5)
+                d.press("back")
+            else:
+                print(u"页面找不到控件！")
+                d.press("back")
+
         else:
-            raise Exception(u"页面时间请求过长！")
+            d.press("back")
+            print(u"页面时间请求过长！")
+            # raise Exception(u"页面时间请求过长！")
 
     else:
         raise Exception(u"页面请求时间过长，请检查！")

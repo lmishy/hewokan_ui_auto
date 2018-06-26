@@ -16,6 +16,7 @@ def test_login_out():
     d = u2.connect(str)
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
     # 我的
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
     sleep(5)

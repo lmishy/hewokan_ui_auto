@@ -15,6 +15,7 @@ def test_xianmian():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 限免专区
     d(text=u"限免专区").click()

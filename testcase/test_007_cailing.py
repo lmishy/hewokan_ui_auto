@@ -14,6 +14,7 @@ def test_cailing():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(2)
     # 切换到爱看
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
     #进入彩铃

@@ -13,6 +13,7 @@ def test_login_yi():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(2)
 
     # 我的
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
@@ -41,6 +42,7 @@ def test_login_yi():
 
 
 if __name__=="__main__":
+    # test_login_yi()
     pytest.main()
 
 

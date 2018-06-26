@@ -16,6 +16,7 @@ def test_wode_qita():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(5)
 
     # 切换我的tab
     d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
@@ -26,13 +27,20 @@ def test_wode_qita():
     sleep(5)
     d(resourceId="com.chinamobile.cloudapp:id/textView1").click()
     sleep(2)
-    d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").click()
+    if(d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").exists):
+        d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").click()
+    else:
+        d.press("back")
     sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
     sleep(2)
     d(resourceId="com.chinamobile.cloudapp:id/textView2").click()
     sleep(2)
     d.press("back")
+    if (d(text=u"个人中心").exists):
+        pass
+    else:
+        d.press("back")
     assert d(text=u"个人中心").exists ==True
     sleep(2)
     #签到

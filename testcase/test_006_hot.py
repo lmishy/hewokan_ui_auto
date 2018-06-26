@@ -13,6 +13,7 @@ def test_hot():
 
     # 启动App
     d.app_start("com.chinamobile.cloudapp")
+    sleep(2)
 
     # 热点banner
     d(resourceId="com.chinamobile.cloudapp:id/image").click()

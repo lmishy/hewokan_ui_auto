@@ -1,1 +1,11 @@
-{}
+{
+  "test_003_login_yi.py::Test_login_yijian::()::test_login_yi": true, 
+  "test_007_cailing.py::Test_cailing::()::test_guangchang": true, 
+  "test_007_cailing.py::Test_cailing::()::test_sucai": true, 
+  "test_007_cailing.py::Test_cailing::()::test_tongxunlu": true, 
+  "test_007_cailing.py::Test_cailing::()::test_wode": true, 
+  "test_008_hot_chinaonline.py::Test_chinaplus::()::test_radio": true, 
+  "test_011_yingshi_jjsy_xpsd_zbrb.py::Test_yingshi2::()::test_yingshi_mrxm": true, 
+  "test_021_wode_shoucang.py::Test_wode::()::test_wode_shoucang": true, 
+  "test_025_wode_139youxiang.py::Test_wode::()::test_wode_139youxiang": true
+}

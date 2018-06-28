@@ -4,45 +4,43 @@
 
 import uiautomator2 as u2
 from time import sleep
-import time
-from po import proxy,ExcuteCase as E
+from po import proxy
 import pytest
 import allure
 
-@E.E
-@allure.step('我的--分享')
-def test_wode_fenxiang():
-    str = proxy.url
-    # 连接手机
-    d = u2.connect(str)
+class Test_wode1():
+    def setup(self):
+        str = proxy.url
+        self.d = u2.connect(str)
+        self.d.app_start("com.chinamobile.cloudapp")
+        sleep(5)
 
-    # 启动App
-    d.app_start("com.chinamobile.cloudapp")
-    sleep(5)
+    def teardown(self):
+        self.d.app_stop("com.chinamobile.cloudapp")
 
-    # 切换我的tab
-    d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
-    sleep(2)
-    # 分享有奖
-    d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click()
-    sleep(2)
-    #邀请记录
-    d(resourceId="btn1").click()
-    sleep(2)
-    assert d(description=u"用户名").exists == True
-    d.press("back")
-    sleep(2)
-    #分享邀请好友
-    d(resourceId="inviteBtn").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click()
-    sleep(2)
-    d.press("back")
-    d.press("back")
-    d.press("back")
-    sleep(5)
-    # 停止app
-    d.app_stop("com.chinamobile.cloudapp")
+    @allure.step('我的--分享')
+    def test_wode_fenxiang(self):
+        # 切换我的tab
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        sleep(2)
+        # 分享有奖
+        self.d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click()
+        sleep(2)
+        # 邀请记录
+        self.d(resourceId="btn1").click()
+        sleep(2)
+        assert self.d(description=u"用户名").exists == True
+        self.d.press("back")
+        sleep(2)
+        # 分享邀请好友
+        self.d(resourceId="inviteBtn").click()
+        sleep(2)
+        self.d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click()
+        sleep(2)
+        self.d.press("back")
+        self.d.press("back")
+        self.d.press("back")
+        sleep(5)
 
 
 

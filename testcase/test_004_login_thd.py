@@ -6,71 +6,85 @@ import pytest
 import allure
 
 
-#@E.E
-@allure.step('第三方登录')
-def test_login_thd():
-    str = proxy.url
-    d = u2.connect(str)
+class Test_login_thd():
+    def setup(self):
+        str = proxy.url
+        self.d = u2.connect(str)
+        self.d.app_start("com.chinamobile.cloudapp")
+        sleep(5)
 
-    # 启动App
-    d.app_start("com.chinamobile.cloudapp")
-    sleep(2)
+    def teardown(self):
+        self.d.app_stop("com.chinamobile.cloudapp")
 
-    # 我的
-    d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
-    sleep(2)
-    d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
-    sleep(2)
-    assert d(text=u"登录和我看").exists == True
+    @allure.step('微信登录')
+    def test_login_wechat(self):
 
-    # 微信
-    d(text=u"微信账号登录").click()
-    sleep(5)
-    if(d(text=u"登录微信").exists):
-        assert d(text=u"登录微信").exists == True
-        d.press("back")
-        d.press("back")
+        # 我的
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
         sleep(2)
-    else:
-        assert d(text=u"登录和我看").exists == True
-        pass
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        sleep(2)
+        assert self.d(text=u"登录和我看").exists == True
 
+        # 微信
+        self.d(text=u"微信账号登录").click()
+        sleep(5)
+        if (self.d(text=u"登录微信").exists):
+            assert self.d(text=u"登录微信").exists == True
+            self.d.press("back")
+            self.d.press("back")
+            sleep(2)
+        else:
+            assert self.d(text=u"登录和我看").exists == True
+            pass
 
+    @allure.step('微博登录')
+    def test_login_weibo(self):
 
+        # 我的
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        sleep(2)
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        sleep(2)
+        assert self.d(text=u"登录和我看").exists == True
 
-    # 新浪
-    sleep(2)
-    d(text=u"微博账号登录").click()
-    sleep(10)
-    if(d(resourceId="com.sina.weibo:id/ivUserPic").exists):
-        assert d(resourceId="com.sina.weibo:id/ivUserPic").exists == True
-        # d.press("back")
-        # sleep(2)
-        d.press("back")
-    elif(d(text=u"登录和我看").exists == True):
-        assert d(text=u"登录和我看").exists == True
-        pass
-    else:
-        d.press("back")
-        pass
+        # 新浪
+        sleep(2)
+        self.d(text=u"微博账号登录").click()
+        sleep(10)
+        if (self.d(resourceId="com.sina.weibo:id/ivUserPic").exists):
+            assert self.d(resourceId="com.sina.weibo:id/ivUserPic").exists == True
+            # d.press("back")
+            # sleep(2)
+            self.d.press("back")
+        elif (self.d(text=u"登录和我看").exists == True):
+            assert self.d(text=u"登录和我看").exists == True
+            pass
+        else:
+            self.d.press("back")
+            pass
 
+    @allure.step('QQ登录')
+    def test_login_qq(self):
 
-    # QQ账号登录
-    sleep(2)
-    d(text=u"QQ账号登录").click()
-    sleep(5)
-    assert d(resourceId="com.tencent.mobileqq:id/name", className="android.widget.ImageView").exists == True
-    d.press("back")
+        # 我的
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        sleep(2)
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        sleep(2)
+        assert self.d(text=u"登录和我看").exists == True
 
-    assert d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").get_text() == u"登录和我看"
+        # QQ账号登录
+        sleep(2)
+        self.d(text=u"QQ账号登录").click()
+        sleep(5)
+        assert self.d(resourceId="com.tencent.mobileqq:id/name",
+                      className="android.widget.ImageView").exists == True
+        self.d.press("back")
 
-    sleep(3)
-    # 停止app
-    d.app_stop("com.chinamobile.cloudapp")
-
+        assert self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").get_text() == u"登录和我看"
 
 
 if __name__=="__main__":
-    test_login_thd()
-    # pytest.main("test_004_login_thd.py")
+    pytest.main("test_004_login_thd.py")
 

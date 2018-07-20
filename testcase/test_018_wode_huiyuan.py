@@ -15,6 +15,7 @@ class Test_wode():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--会员')
@@ -45,9 +46,19 @@ class Test_wode():
         self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
         sleep(2)
         # 芒果TV
-        self.d(resourceId="com.chinamobile.cloudapp:id/iv_logo", className="android.widget.ImageView", instance=1).click()
+        self.d.click(0.821, 0.321)
+        sleep(5)
+        assert self.d(text=u'芒果VIP会员').exists
+        sleep(5)
+        self.d(description=u"立即订购").click()
+        sleep(5)
+        assert self.d(text=u'芒果TV特惠流量包').exists
         sleep(2)
-        self.d(className="com.tencent.smtt.webkit.WebView").click()
+        self.d.press("back")
+        sleep(2)
+        self.d.click(0.878, 0.662)
+        sleep(5)
+        assert self.d(text=u'芒果TV特惠流量包').exists
         sleep(2)
         self.d.press("back")
         self.d.press("back")
@@ -61,17 +72,38 @@ class Test_wode():
         self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
         sleep(2)
         # 百视通VIP
-        self.d(resourceId="com.chinamobile.cloudapp:id/iv_logo", className="android.widget.ImageView", instance=2).click()
+        self.d.click(0.546, 0.571)
+        sleep(5)
+        assert self.d(text=u'百视通VIP会员').exists
         sleep(2)
-        self.d(className="com.tencent.smtt.webkit.WebView").click()
+        self.d.click(0.878, 0.49)
+        sleep(5)
+        assert self.d(text=u'百视通VIP会员').exists
         sleep(2)
+        self.d.press("back")
+        sleep(2)
+        self.d.click(0.829, 0.652)
+        sleep(5)
+        assert self.d(text=u'百视通VIP会员').exists
+        self.d.press("back")
+        sleep(2)
+        self.d.click(0.866, 0.828)
+        sleep(5)
+        assert self.d(text=u'百视通VIP会员').exists
         self.d.press("back")
         self.d.press("back")
 
     @allure.step('我的--咪咕会员VIP')
     def test_huiyuan_migu(self):
+        # 切换我的tab
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        sleep(2)
+        # 会员中心
+        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
         # 咪咕会员VIP
-        self.d(resourceId="com.chinamobile.cloudapp:id/iv_logo").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/btn_order").click()
+        sleep(5)
+        assert self.d(text=u'咪咕VIP会员').exists
         self.d.press("back")
         self.d.press("back")
 

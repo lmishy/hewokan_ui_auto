@@ -14,6 +14,7 @@ class Test_register():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('注册功能')
@@ -41,7 +42,8 @@ class Test_register():
         self.d(text=u'下一步').click()
         sleep(5)
 
-        assert self.d(text=u"获取验证码").exists == True
+        assert self.d(text=u"获取验证码").exists
+        sleep(5)
         # 获取验证码
         # d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click()
 

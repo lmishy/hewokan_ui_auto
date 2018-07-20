@@ -13,6 +13,7 @@ class Test_zhibo():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('直播页面')
@@ -20,8 +21,8 @@ class Test_zhibo():
         # 切换直播tab
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_2").click()
-        sleep(2)
-        assert self.d(text=u"本地").exists == True
+        sleep(5)
+        assert self.d(text=u"本地").exists 
         sleep(2)
         self.d(text=u"本地").click()
         sleep(2)

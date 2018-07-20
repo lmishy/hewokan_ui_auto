@@ -13,6 +13,7 @@ class Test_aikan4():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('爱看--精品教育--幼儿')
@@ -42,7 +43,7 @@ class Test_aikan4():
         sleep(5)
         # 小学
         self.d(text=u"小学").click()
-        assert self.d(text=u"小学").exists == True
+        assert self.d(text=u"小学").exists 
         sleep(5)
         # 向上滑动三次次
         for i in range(3):
@@ -59,7 +60,7 @@ class Test_aikan4():
         sleep(5)
         # 初中
         self.d(text=u"初中").click()
-        assert self.d(text=u"初中").exists == True
+        assert self.d(text=u"初中").exists 
         sleep(5)
         # 向上滑动三次次
         for i in range(3):
@@ -76,7 +77,7 @@ class Test_aikan4():
         sleep(5)
         # 高中
         self.d(text=u"高中").click()
-        assert self.d(text=u"高中")== True
+        assert self.d(text=u"高中")
         sleep(5)
         # 向上滑动三次次
         for i in range(3):

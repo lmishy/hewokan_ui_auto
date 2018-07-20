@@ -15,6 +15,7 @@ class Test_loginout():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step("退出登录")
@@ -26,7 +27,7 @@ class Test_loginout():
         if (self.d(resourceId="com.chinamobile.cloudapp:id/login_out").exists):
             self.d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
             sleep(2)
-            assert self.d(text=u"登录和我看").exists == True
+            assert self.d(text=u"个人中心").exists
         else:
             raise Exception(u"退出按钮不存在！")
 

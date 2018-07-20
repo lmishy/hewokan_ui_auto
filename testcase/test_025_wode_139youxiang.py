@@ -15,6 +15,7 @@ class Test_wode7():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--139邮箱')
@@ -28,7 +29,7 @@ class Test_wode7():
         # 139邮箱
         self.d(text=u"139邮箱").click()
         sleep(6)
-        assert self.d(text=u"139邮箱").exists == True
+        assert self.d(text=u"139邮箱").exists 
         self.d.press("back")
         sleep(5)
 

@@ -15,6 +15,7 @@ class Test_wode3():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--我的收藏')
@@ -28,7 +29,7 @@ class Test_wode3():
         # 播放节目
         self.d(resourceId="com.chinamobile.cloudapp:id/collect_item_head").click()
         sleep(5)
-        self.self.d.press("back")
+        self.d.press("back")
         sleep(2)
         # 编辑
         self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_edit").click()
@@ -50,13 +51,13 @@ class Test_wode3():
         self.d(resourceId="com.chinamobile.cloudapp:id/listView").click()
         # 切换资讯
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_collect_tab1").click()
-        assert self.d(text=u"资讯").exists == True
+        assert self.d(text=u"资讯").exists 
         sleep(2)
         # 切换电台
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_collect_tab3").click()
-        assert self.d(text=u"电台").exists == True
+        assert self.d(text=u"电台").exists 
         sleep(2)
-        self.self.d.press("back")
+        self.d.press("back")
 
 
 if __name__ == "__main__":

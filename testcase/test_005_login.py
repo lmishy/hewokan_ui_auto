@@ -14,6 +14,7 @@ class Test_login():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step("手机登录失败")
@@ -33,8 +34,8 @@ class Test_login():
         self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
         sleep(5)
         self.d(text=u"登录和我看").wait(timeout=10)
-        assert self.d(text=u"登录和我看").exists == True
-        sleep(2)
+        assert self.d(text=u"登录和我看").exists 
+        sleep(5)
 
     @allure.step("手机登录成功")
     def test_login_seccess(self):
@@ -53,8 +54,8 @@ class Test_login():
         self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
         sleep(5)
         self.d(text=u"个人中心").wait(timeout=10)
-        assert self.d(text=u"个人中心").exists == True
-        sleep(2)
+        assert self.d(text=u"个人中心").exists 
+        sleep(5)
 
 
 if __name__=="__main__":

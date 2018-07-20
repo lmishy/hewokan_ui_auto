@@ -15,6 +15,7 @@ class Test_wode6():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--和彩云')

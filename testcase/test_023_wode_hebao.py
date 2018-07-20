@@ -15,6 +15,7 @@ class Test_wode5():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--和包')
@@ -26,7 +27,7 @@ class Test_wode5():
         # 和包
         self.d(resourceId="com.chinamobile.cloudapp:id/andpacket").click()
         sleep(6)
-        assert self.d(text=u"和包").exists == True
+        assert self.d(text=u"和包").exists 
         self.d.press("back")
         sleep(5)
 

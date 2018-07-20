@@ -13,6 +13,7 @@ class Test_login_yijian():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('一键登录')
@@ -27,19 +28,20 @@ class Test_login_yijian():
         # 一键登录
         self.d(resourceId="com.chinamobile.cloudapp:id/fl_login_yidong").click()
         sleep(5)
-        if self.d(text=u"个人中心").exists:
+        if (self.d(text=u"个人中心").exists):
             sleep(5)
             assert self.d(text=u"个人中心").exists == True
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             self.d(resourceId="com.chinamobile.cloudapp:id/login_out").click()
+            sleep(5)
         else:
-            assert self.d(text=u"登录和我看").exists == True
+            assert self.d(text=u"登录和我看").exists
+            sleep(5)
 
 
 
 
 if __name__=="__main__":
-    # test_login_yi()
     pytest.main("test_003_login_yi.py")
 
 

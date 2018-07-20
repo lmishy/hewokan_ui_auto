@@ -16,6 +16,7 @@ class Test_yingshi2():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('影视--即将上映')
@@ -29,9 +30,9 @@ class Test_yingshi2():
             sleep(5)
             self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
             sleep(2)
-            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").exists == True
+            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").exists 
             self.d.press("back")
-            sleep(5)
+
         else:
             raise Exception(u"没有这个分区！")
 
@@ -49,6 +50,7 @@ class Test_yingshi2():
             self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic", className="android.widget.ImageView", instance=3).click()
             sleep(3)
             self.d.press("back")
+
         else:
             raise Exception(u"没有这个分区！")
 
@@ -61,23 +63,20 @@ class Test_yingshi2():
         # 向上滑动
         sleep(5)
         for i in range(2):
-            self.d.swipe(0.5, 0.7, 0.5, 0.3, 0.5)
+            self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
-        if (self.d(resourceId="com.chinamobile.cloudapp:id/title", text=u"每日限免").exists):
-            # 选择新片速递一个节目
-            self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=1).click()
-            sleep(6)
-            self.d.press("back")
-            sleep(2)
-        else:
-            raise Exception(u"没有这个分区！")
+
+        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=3).click()
+        sleep(6)
+        self.d.press("back")
+        sleep(2)
         # 换一换
         self.d(text=u"换一换").click()
         sleep(2)
         # 更多精彩
         self.d(text=u"更多精彩").click()
         sleep(5)
-        assert self.d(text=u"电影").exists == True
+        assert self.d(text=u"电影").exists 
         sleep(2)
         # 全部电影
         self.d(text=u"内地").click()
@@ -107,7 +106,7 @@ class Test_yingshi2():
         self.d(text=u"VIP").click()
         sleep(3)
         self.d.press("back")
-        sleep(3)
+
 
     @allure.step('影视--重磅热播')
     def test_yingshi_zbrb(self):
@@ -129,8 +128,9 @@ class Test_yingshi2():
         # 更多精彩
         self.d(text=u"更多精彩", className="android.widget.TextView", instance=1).click()
         sleep(5)
-        assert self.d(text=u"电视剧").exists == True
+        assert self.d(text=u"电视剧").exists 
         self.d.press("back")
+
 
 
 

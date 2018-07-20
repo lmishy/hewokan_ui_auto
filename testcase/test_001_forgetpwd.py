@@ -14,6 +14,7 @@ class Test_forgetpwd():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('忘记密码')
@@ -32,8 +33,8 @@ class Test_forgetpwd():
         # 获取验证码
         self.d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click()
         sleep(5)
-        assert self.d(text=u"找回密码").exists == True
-        sleep(2)
+        assert self.d(text=u"找回密码").exists 
+        sleep(5)
 
 
 if __name__=="__main__":

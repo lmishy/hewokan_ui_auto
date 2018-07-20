@@ -15,6 +15,7 @@ class Test_wode8():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--设置')
@@ -29,12 +30,12 @@ class Test_wode8():
         # 设置
         self.d(text=u"设置").click()
         sleep(2)
-        assert self.d(text=u"设置").exists == True
+        assert self.d(text=u"设置").exists 
         sleep(5)
         # 修改密码
         self.d(resourceId="com.chinamobile.cloudapp:id/layout_change_psd").click()
         sleep(2)
-        assert self.d(text=u"修改密码").exists == True
+        assert self.d(text=u"修改密码").exists 
         self.d(resourceId="com.chinamobile.cloudapp:id/et_old_pwd").set_text("12346")
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/et_new_pwd1").set_text("123456")
@@ -54,7 +55,7 @@ class Test_wode8():
         # 清理缓存
         self.d(resourceId="com.chinamobile.cloudapp:id/rl_clear_cache").click()
         sleep(2)
-        assert self.d(text=u'0K').exists == True
+        assert self.d(text=u'0K').exists 
         self.d.press("back")
         sleep(5)
 

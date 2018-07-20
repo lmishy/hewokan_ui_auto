@@ -13,6 +13,7 @@ class Test_hot():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('热点页面--banner')
@@ -23,7 +24,7 @@ class Test_hot():
         if (self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_left_return").exists):
             self.d.press("back")
         else:
-            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_back").exists == True
+            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_back").exists 
             self.d.press("back")
 
     @allure.step('热点页面--热门榜单')
@@ -31,7 +32,7 @@ class Test_hot():
         # 热门榜单
         self.d(text=u"热门榜单").click()
         sleep(2)
-        assert self.d(text=u"电影").exists == True
+        assert self.d(text=u"电影").exists 
         sleep(2)
         self.d(text=u"电视剧").click()
         sleep(2)
@@ -42,15 +43,15 @@ class Test_hot():
     @allure.step('热点页面--签到')
     def test_qiandao(self):
         # 签到有礼
-        self.d(text=u"签到有礼").click()
+        self.d(text=u"每日签到").click()
         sleep(2)
         if (self.d(description=u"未签到").exists):
             self.d(resourceId="headerUpP").click()
             sleep(5)
-            assert self.d(description=u"未签到").exists == True
+            assert self.d(description=u"已签到").exists
         else:
             pass
-        sleep(2)
+        sleep(5)
         self.d.press("back")
 
         '''

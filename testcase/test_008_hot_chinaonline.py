@@ -14,6 +14,7 @@ class Test_chinaplus():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step("热点--一带一路")
@@ -24,7 +25,7 @@ class Test_chinaplus():
         self.d(resourceId="com.chinamobile.cloudapp:id/txt1").click()
         sleep(2)
         if (self.d(text=u"一带一路文化长廊").exists):
-            assert self.d(text=u"一带一路文化长廊").exists == True
+            assert self.d(text=u"一带一路文化长廊").exists 
             # banner
             self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
             sleep(5)
@@ -44,34 +45,35 @@ class Test_chinaplus():
         else:
             self.d.press("back")
             # raise Exception(u"用例异常！")
-        sleep(2)
+        sleep(5)
 
     @allure.step("热点--radio")
     def test_radio(self):
         self.d(resourceId="com.chinamobile.cloudapp:id/pic2").click()
         sleep(5)
-        assert self.d(text=u"首页").exists == True
+        assert self.d(text=u"首页").exists 
         sleep(2)
         self.d(text=u"首页").click()
         sleep(2)
         self.d(text=u"收音机").click()
         sleep(5)
         self.d(text=u"推荐栏目").wait(timeout=10)
-        assert self.d(text=u"推荐栏目").exists == True
+        assert self.d(text=u"推荐栏目").exists 
         sleep(2)
         self.d(text=u"分类").click()
         sleep(5)
         self.d(text=u"新闻").wait(timeout=10)
-        assert self.d(text=u"新闻").exists == True
+        assert self.d(text=u"新闻").exists 
         sleep(2)
         self.d(text=u"专题").click()
         sleep(5)
         self.d(text=u"排行榜").click()
         sleep(5)
         self.d(text=u"节目榜单").wait(timeout=10)
-        assert self.d(text=u"节目榜单").exists == True
-        sleep(2)
+        assert self.d(text=u"节目榜单").exists 
+        sleep(5)
         self.d.press("back")
+        sleep(5)
 
     @allure.step("热点--Cinitalia")
     def test_Cinitalia(self):
@@ -79,7 +81,7 @@ class Test_chinaplus():
         self.d(resourceId="com.chinamobile.cloudapp:id/pic3").click()
         sleep(5)
         self.d(text=u"Cinitalia").wait(timeout=10)
-        assert self.d(text=u"Cinitalia").exists == True
+        assert self.d(text=u"Cinitalia").exists 
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
         sleep(5)
@@ -95,12 +97,14 @@ class Test_chinaplus():
             sleep(1)
         self.d.press("back")
         self.d.press("back")
+        sleep(5)
 
-    @allure.step("gengduo")
+    @allure.step("更多")
     def test_more(self):
         self.d(resourceId="com.chinamobile.cloudapp:id/txt4").click()
         sleep(1)
         self.d.press("back")
+        sleep(5)
 
 
 

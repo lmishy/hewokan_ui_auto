@@ -16,6 +16,7 @@ class Test_wode2():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--观看历史')

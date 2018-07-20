@@ -15,6 +15,7 @@ class Test_wode10():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--关于我们')
@@ -29,17 +30,17 @@ class Test_wode10():
         # 关于我们
         self.d(text=u"关于我们").click()
         sleep(2)
-        assert self.d(text=u"关于").exists == True
+        assert self.d(text=u"关于").exists 
         sleep(2)
         self.d(text=u"应用简介").click()
         sleep(5)
-        assert self.d(text=u"应用简介").exists == True
+        assert self.d(text=u"应用简介").exists 
         sleep(2)
         self.d.press("back")
         sleep(2)
         self.d(text=u"用户协议").click()
         sleep(5)
-        assert self.d(text=u"和我看用户协议").exists == True
+        assert self.d(text=u"和我看用户协议").exists 
         sleep(2)
         # 向上滑动
         sleep(5)
@@ -55,10 +56,9 @@ class Test_wode10():
         sleep(2)
         self.d.press("back")
         sleep(2)
-        assert self.d(text=u"个人中心").exists == True
-        sleep(2)
         self.d.press("back")
-
+        sleep(5)
+        assert self.d(text=u"个人中心").exists
         sleep(5)
 
 

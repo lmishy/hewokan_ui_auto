@@ -13,6 +13,7 @@ class Test_aikan1():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('爱看——彩铃')
@@ -20,11 +21,11 @@ class Test_aikan1():
         # 切换爱看tab
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
         sleep(2)
-        assert self.d(text=u"视频彩铃").exists == True
+        assert self.d(text=u"视频彩铃").exists 
         # 视频彩铃
         self.d(text=u"视频彩铃").click()
         sleep(5)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         self.d.press("back")
         sleep(2)
 
@@ -36,7 +37,7 @@ class Test_aikan1():
         # 学而思
         self.d(text=u"学而思").click()
         sleep(2)
-        assert self.d(text=u"学而思").exists == True
+        assert self.d(text=u"学而思").exists 
         self.d.press("back")
         sleep(2)
 
@@ -48,7 +49,7 @@ class Test_aikan1():
         # 阿里体育
         self.d(text=u"阿里体育").click()
         sleep(2)
-        assert self.d(text=u"阿里体育").exists == True
+        assert self.d(text=u"阿里体育").exists 
         self.d.press("back")
         sleep(2)
 
@@ -60,7 +61,7 @@ class Test_aikan1():
         # 精品教育
         self.d(text=u"精品教育").click()
         sleep(2)
-        assert self.d(text=u"精品教育").exists == True
+        assert self.d(text=u"精品教育").exists 
         self.d.press("back")
         sleep(2)
         # 换一换两次

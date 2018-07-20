@@ -14,6 +14,7 @@ class Test_login_thd():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('微信登录')
@@ -24,18 +25,19 @@ class Test_login_thd():
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
         sleep(2)
-        assert self.d(text=u"登录和我看").exists == True
+        assert self.d(text=u"登录和我看").exists
+
 
         # 微信
         self.d(text=u"微信账号登录").click()
         sleep(5)
         if (self.d(text=u"登录微信").exists):
-            assert self.d(text=u"登录微信").exists == True
+            assert self.d(text=u"登录微信").exists
             self.d.press("back")
             self.d.press("back")
             sleep(2)
         else:
-            assert self.d(text=u"登录和我看").exists == True
+            assert self.d(text=u"登录和我看").exists
             pass
 
     @allure.step('微博登录')
@@ -45,8 +47,8 @@ class Test_login_thd():
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
-        sleep(2)
-        assert self.d(text=u"登录和我看").exists == True
+        sleep(5)
+        assert self.d(text=u"登录和我看").exists
 
         # 新浪
         sleep(2)
@@ -57,8 +59,8 @@ class Test_login_thd():
             # d.press("back")
             # sleep(2)
             self.d.press("back")
-        elif (self.d(text=u"登录和我看").exists == True):
-            assert self.d(text=u"登录和我看").exists == True
+        elif (self.d(text=u"登录和我看").exists):
+            assert self.d(text=u"登录和我看").exists
             pass
         else:
             self.d.press("back")
@@ -72,15 +74,16 @@ class Test_login_thd():
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
         sleep(2)
-        assert self.d(text=u"登录和我看").exists == True
+        assert self.d(text=u"登录和我看").exists
 
         # QQ账号登录
         sleep(2)
         self.d(text=u"QQ账号登录").click()
         sleep(5)
         assert self.d(resourceId="com.tencent.mobileqq:id/name",
-                      className="android.widget.ImageView").exists == True
+                      className="android.widget.ImageView").exists
         self.d.press("back")
+        sleep(5)
 
         assert self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title").get_text() == u"登录和我看"
 

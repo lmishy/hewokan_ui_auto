@@ -15,6 +15,7 @@ class Test_aikan3():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('爱看--阿里体育')
@@ -28,7 +29,7 @@ class Test_aikan3():
         # 篮球
         self.d(text=u"篮球").click()
         sleep(5)
-        # 精彩集锦
+        # 小组赛
         self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
         sleep(10)
         self.d.press("back")
@@ -43,14 +44,10 @@ class Test_aikan3():
         sleep(2)
 
         # 向上滑动两次
-        for i in range(2):
+        for i in range(4):
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
 
-        # 激情拉拉队
-        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
-        sleep(10)
-        self.d.press("back")
         sleep(5)
         self.d(text=u"拳击").click(timeout=5)
         self.d(text=u"健身").click(timeout=5)

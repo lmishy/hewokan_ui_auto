@@ -16,6 +16,7 @@ class Test_wode1():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--分享')
@@ -25,16 +26,16 @@ class Test_wode1():
         sleep(2)
         # 分享有奖
         self.d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click()
-        sleep(2)
+        sleep(5)
         # 邀请记录
         self.d(resourceId="btn1").click()
-        sleep(2)
-        assert self.d(description=u"用户名").exists == True
+        sleep(5)
+        assert self.d(description=u"用户名").exists 
         self.d.press("back")
         sleep(2)
         # 分享邀请好友
         self.d(resourceId="inviteBtn").click()
-        sleep(2)
+        sleep(5)
         self.d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click()
         sleep(2)
         self.d.press("back")

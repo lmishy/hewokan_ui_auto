@@ -14,6 +14,7 @@ class Test_cailing():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step("爱看--视频彩铃--banner")
@@ -21,10 +22,11 @@ class Test_cailing():
 
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 首页banner
         self.d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=15.0)
@@ -44,16 +46,17 @@ class Test_cailing():
             sleep(2)
             self.d.press("back")
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
 
     @allure.step("首页--小常识")
     def test_cangshi(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 彩铃小常识
         self.d(text=u"视频彩铃小常识 >").click()
@@ -68,15 +71,16 @@ class Test_cailing():
     def test_sucai(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 环球掠影
         self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=1).click()
         sleep(2)
-        assert self.d(resourceId="com.chinamobile.cloudapp:id/iv_phone_center").exists == True
+        assert self.d(resourceId="com.chinamobile.cloudapp:id/iv_phone_center").exists 
         self.d.press("back")
 
         # 滑动到底端
@@ -89,15 +93,16 @@ class Test_cailing():
     def test_dail(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 切换到呼叫
         self.d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_2").click()
         sleep(5)
-        assert self.d(text=u"拔号键盘").exists == True
+        assert self.d(text=u"拔号键盘").exists 
         sleep(1)
         self.d(resourceId="com.chinamobile.cloudapp:id/imageButton_1").click()
         sleep(1)
@@ -129,33 +134,37 @@ class Test_cailing():
     def test_tongxunlu(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
+        self.d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_2").click()
+        sleep(5)
         # 切换通讯录
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_address_book").click()
         sleep(2)
-        assert self.d(text=u"通讯录").exists == True
+        assert self.d(text=u"通讯录").exists 
         sleep(1)
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_recent_calls").click()
         sleep(2)
-        assert self.d(text=u"最近通话").exists == True
+        assert self.d(text=u"最近通话").exists 
 
     @allure.step("广场")
     def test_guangchang(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 广场
         self.d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_3").click()
         sleep(5)
-        assert self.d(text=u"最新").exists == True
+        assert self.d(text=u"最新").exists 
         sleep(2)
         self.d(text=u"最热").click()
         sleep(2)
@@ -166,10 +175,11 @@ class Test_cailing():
     def test_wode(self):
         # 切换到爱看
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        sleep(2)
         # 进入彩铃
         self.d(text=u"视频彩铃").click()
         sleep(2)
-        assert self.d(text=u"VoLTE视频彩铃").exists == True
+        assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 我的
         self.d(resourceId="com.chinamobile.cloudapp:id/callshow_bottom_home_tab_4").click()
@@ -195,7 +205,7 @@ class Test_cailing():
         if (self.d(text=u"已开通").exists):
             self.d(resourceId="com.chinamobile.cloudapp:id/rl_my_diy").click()
             sleep(2)
-            assert self.d(text=u"我上传的视频彩铃").exists == True
+            assert self.d(text=u"我上传的视频彩铃").exists 
             self.d(resourceId="com.chinamobile.cloudapp:id/toset").click(timeout=10)
             sleep(2)
             self.d.press("back")
@@ -205,19 +215,20 @@ class Test_cailing():
             sleep(2)
             self.d.press("back")
         sleep(5)
-        self.d.press("back")
+        # self.d.press("back")
+        # sleep(5)
 
         # 我的点赞
         self.d(text=u"我的点赞").click()
         sleep(2)
-        assert self.d(text=u"我的点赞").exists == True
+        assert self.d(text=u"我的点赞").exists 
         self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_left_return").click()
         sleep(2)
 
         # 用户反馈
         self.d(resourceId="com.chinamobile.cloudapp:id/rl_feed").click()
         sleep(2)
-        assert self.d(text=u"意见反馈").exists == True
+        assert self.d(text=u"意见反馈").exists 
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_left_return").click()
         sleep(2)
@@ -225,7 +236,7 @@ class Test_cailing():
         # 系统设置
         self.d(resourceId="com.chinamobile.cloudapp:id/rl_system_setting").click()
         sleep(2)
-        assert self.d(text=u"设置").exists == True
+        assert self.d(text=u"设置").exists 
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/checkBox0").click()
         sleep(2)

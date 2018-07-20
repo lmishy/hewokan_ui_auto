@@ -13,6 +13,7 @@ class Test_aikan2():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('爱看--学而思')
@@ -23,7 +24,7 @@ class Test_aikan2():
         # 学而思
         self.d(text=u"学而思").click()
         sleep(5)
-        assert self.d(text=u"学而思").exists == True
+        assert self.d(text=u"学而思").exists 
         # 播放节目
         self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
         sleep(5)
@@ -36,7 +37,7 @@ class Test_aikan2():
         self.d(resourceId="com.chinamobile.cloudapp:id/episode_select_txt", text=u"15").click()
         sleep(5)
         self.d.press("back")
-        sleep(5)
+
 
 
 

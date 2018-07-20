@@ -15,6 +15,7 @@ class Test_wode9():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('我的--反馈')
@@ -29,7 +30,7 @@ class Test_wode9():
         # 设置
         self.d(text=u"意见反馈").click()
         sleep(2)
-        assert self.d(text=u"意见反馈").exists == True
+        assert self.d(text=u"意见反馈").exists 
         # 输入文字
         self.d(resourceId="com.chinamobile.cloudapp:id/editText").set_text("APP很好，就是有些慢")
         sleep(2)

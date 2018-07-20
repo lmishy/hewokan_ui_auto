@@ -15,6 +15,7 @@ class Test_xianmian():
         sleep(5)
 
     def teardown(self):
+        sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
     @allure.step('热点--banner')
@@ -23,7 +24,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists == True
+        assert self.d(text=u"限免专区").exists 
         sleep(5)
         # 点击banner
         if (self.d(resourceId="com.chinamobile.cloudapp:id/image").exists):
@@ -38,7 +39,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists == True
+        assert self.d(text=u"限免专区").exists 
         sleep(5)
         # 即将限免的一部
         if (self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic").exists):
@@ -53,7 +54,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists == True
+        assert self.d(text=u"限免专区").exists 
         sleep(5)
         # 高分电影大放送
         sleep(2)
@@ -63,7 +64,7 @@ class Test_xianmian():
         sleep(2)
         self.d.press("back")
         sleep(5)
-        assert self.d(text=u"热点").exists == True
+        assert self.d(text=u"热点").exists 
 
 
 

@@ -24,9 +24,9 @@ class Test_aikan2():
         # 学而思
         self.d(text=u"学而思").click()
         sleep(5)
-        assert self.d(text=u"学而思").exists 
+        assert self.d(text=u"学而思").wait(exists=True,timeout=20)
         # 播放节目
-        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
         sleep(5)
         # 收藏
         self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()

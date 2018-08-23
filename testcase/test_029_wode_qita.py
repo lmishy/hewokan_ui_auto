@@ -23,7 +23,7 @@ class Test_wode11():
         # 切换我的tab
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
         sleep(2)
-        assert self.d(text=u"个人中心").exists 
+        assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         # 换头像
         self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
         sleep(5)
@@ -43,7 +43,7 @@ class Test_wode11():
             pass
         else:
             self.d.press("back")
-        assert self.d(text=u"个人中心").exists 
+        assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         sleep(2)
 
     @allure.step('我的--签到')
@@ -51,14 +51,14 @@ class Test_wode11():
         # 切换我的tab
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
         sleep(2)
-        assert self.d(text=u"个人中心").exists 
+        assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         # 签到
         self.d(resourceId="com.chinamobile.cloudapp:id/sign_button").click()
         sleep(2)
         if (self.d(text=u"未签到").exists):
             self.d(resourceId="headerUpP").click()
             sleep(2)
-            assert self.d(text=u"已签到").exists 
+            assert self.d(text=u"已签到").wait(exists=True,timeout=20)
         else:
             self.d.press("back")
 

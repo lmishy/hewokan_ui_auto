@@ -30,6 +30,8 @@ class Test_yingshi3():
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
         sleep(5)
+        assert self.d(text=u"12-喇叭花-伴奏").wait(exists=True, timeout=20)
+        sleep(5)
         if (self.d(resourceId="com.chinamobile.cloudapp:id/more").exists):
             self.d(resourceId="com.chinamobile.cloudapp:id/more").click()
             sleep(2)
@@ -53,6 +55,8 @@ class Test_yingshi3():
         sleep(5)
         self.d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
         sleep(5)
+        assert self.d(text=u"摇滚萝莉").wait(exists=True, timeout=20)
+        sleep(2)
         self.d.press("back")
         sleep(2)
 
@@ -68,6 +72,8 @@ class Test_yingshi3():
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
         sleep(5)
+        assert self.d(text=u"MES sentence chant boy").wait(exists=True, timeout=20)
+        sleep(2)
         self.d.press("back")
         sleep(2)
 
@@ -80,6 +86,8 @@ class Test_yingshi3():
         sleep(2)
         # 搜索功能-推荐
         self.d(resourceId="com.chinamobile.cloudapp:id/textView", text=u"4.小猪佩奇").click()
+        sleep(2)
+        assert self.d(text=u"小猪佩奇第二季").wait(exists=True,timeout=20)
         sleep(2)
         self.d.press("back")
         sleep(2)

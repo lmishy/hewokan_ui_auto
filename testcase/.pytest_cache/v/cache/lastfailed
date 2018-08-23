@@ -1,7 +1,13 @@
 {
+  "test_005_login.py::Test_login::()::test_login_fail": true, 
+  "test_005_login.py::Test_login::()::test_login_seccess": true, 
+  "test_018_wode_huiyuan.py::Test_wode::()::test_huiyuan_baishitong": true, 
   "test_018_wode_huiyuan.py::Test_wode::()::test_huiyuan_manggo": true, 
+  "test_019_wode_fenxiang.py::Test_wode1::()::test_wode_fenxiang": true, 
   "test_021_wode_shoucang.py::Test_wode::()::test_wode_shoucang": true, 
   "test_025_wode_139youxiang.py::Test_wode::()::test_wode_139youxiang": true, 
+  "test_026_wode_shezhi.py::Test_wode8::()::test_wode_shezhi": true, 
+  "test_028_wode_guanyu.py::Test_wode10::()::test_wode_guanyu": true, 
   "test_030_shijiebei.py::Test_shijiebei::()::test_shijiebei": true, 
   "test_040_loginout.py::Test_loginout::()::test_login_out": true
 }

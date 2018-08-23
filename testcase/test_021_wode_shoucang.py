@@ -51,11 +51,11 @@ class Test_wode3():
         self.d(resourceId="com.chinamobile.cloudapp:id/listView").click()
         # 切换资讯
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_collect_tab1").click()
-        assert self.d(text=u"资讯").exists 
+        assert self.d(text=u"资讯").wait(exists=True,timeout=20)
         sleep(2)
         # 切换电台
         self.d(resourceId="com.chinamobile.cloudapp:id/tv_collect_tab3").click()
-        assert self.d(text=u"电台").exists 
+        assert self.d(text=u"电台").wait(exists=True,timeout=20)
         sleep(2)
         self.d.press("back")
 

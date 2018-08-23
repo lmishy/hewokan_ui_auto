@@ -26,7 +26,10 @@ class Test_yingshi1():
         # 播放其中一个视频
         self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
         sleep(5)
-        self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
+        if (self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").exists):
+            self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
+        else:
+            assert self.d(resourceId="com.chinamobile.cloudapp:id/iv_share").wait(exists=True,timeout=20)
         sleep(2)
         self.d.press("back")
         sleep(5)
@@ -41,7 +44,7 @@ class Test_yingshi1():
         self.d(text=u"咪咕视频").click()
         sleep(5)
         self.d(text=u"咪咕专区").wait(timeout=10)
-        assert self.d(text=u"咪咕专区").exists 
+        assert self.d(text=u"咪咕专区").wait(exists=True,timeout=20)
         self.d.press("back")
 
 
@@ -53,7 +56,7 @@ class Test_yingshi1():
         # 芒果专区
         self.d(text=u"芒果TV").click()
         sleep(5)
-        assert self.d(text=u"芒果TV-精选").exists 
+        assert self.d(text=u"芒果TV-精选").wait(exists=True,timeout=20)
         self.d.press("back")
 
 
@@ -65,7 +68,20 @@ class Test_yingshi1():
         # 百视通专区
         self.d(text=u"百视通").click()
         sleep(5)
-        assert self.d(text=u"百视通").exists 
+        assert self.d(text=u"百视通").wait(exists=True,timeout=20)
+        sleep(5)
+        self.d(text=u"首页").click()
+        sleep(5)
+        self.d(text=u"电影").click()
+        sleep(5)
+        self.d(text=u"电视剧").click()
+        sleep(5)
+        self.d(text=u"动漫").click()
+        sleep(5)
+        self.d(text=u"综艺").click()
+        sleep(5)
+        self.d(text=u"BBKING").click()
+        sleep(5)
         self.d.press("back")
         sleep(5)
 
@@ -75,15 +91,11 @@ class Test_yingshi1():
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
         sleep(2)
         # 凤凰网
-        self.d(text=u"凤凰网").click()
+        self.d(text=u"凤凰网").click(timeout=20)
         sleep(5)
-        assert self.d(text=u"凤凰网专区").exists 
+        assert self.d(text=u"凤凰网专区").wait(exists=True,timeout=20)
         self.d.press("back")
 
-        # #魔百盒
-        # self.d(text=u"魔百盒").click()
-        # sleep(2)
-        # self.d.press("back")
 
 
 

@@ -26,15 +26,16 @@ class Test_wode6():
         sleep(2)
         # 和彩云
         self.d(text=u"和彩云").click()
-        sleep(2)
+        sleep(5)
         self.d.press("back")
         sleep(2)
         self.d.press("back")
         sleep(2)
         self.d.press("back")
         sleep(5)
-        self.d.press("back")
-        sleep(5)
+        assert self.d(text=u"和彩云").wait(exists=True,timeout=20)
+        # self.d.press("back")
+        # sleep(5)
 
 
 

@@ -29,7 +29,7 @@ class Test_wode7():
         # 139邮箱
         self.d(text=u"139邮箱").click()
         sleep(6)
-        assert self.d(text=u"139邮箱").exists 
+        assert self.d(text=u"139邮箱").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(5)
 

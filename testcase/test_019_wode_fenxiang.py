@@ -30,7 +30,7 @@ class Test_wode1():
         # 邀请记录
         self.d(resourceId="btn1").click()
         sleep(5)
-        assert self.d(description=u"用户名").exists 
+        assert self.d(description=u"用户名").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
         # 分享邀请好友

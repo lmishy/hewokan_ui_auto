@@ -24,7 +24,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists 
+        assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)
         # 点击banner
         if (self.d(resourceId="com.chinamobile.cloudapp:id/image").exists):
@@ -39,7 +39,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists 
+        assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)
         # 即将限免的一部
         if (self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic").exists):
@@ -54,7 +54,7 @@ class Test_xianmian():
         # 限免专区
         self.d(text=u"限免专区").click()
         sleep(5)
-        assert self.d(text=u"限免专区").exists 
+        assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)
         # 高分电影大放送
         sleep(2)
@@ -64,7 +64,7 @@ class Test_xianmian():
         sleep(2)
         self.d.press("back")
         sleep(5)
-        assert self.d(text=u"热点").exists 
+        assert self.d(text=u"热点").wait(exists=True,timeout=20)
 
 
 

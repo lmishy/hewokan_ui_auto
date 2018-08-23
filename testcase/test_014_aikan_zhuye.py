@@ -21,11 +21,11 @@ class Test_aikan1():
         # 切换爱看tab
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
         sleep(2)
-        assert self.d(text=u"视频彩铃").exists 
+        assert self.d(text=u"视频彩铃").wait(exists=True,timeout=20)
         # 视频彩铃
         self.d(text=u"视频彩铃").click()
         sleep(5)
-        assert self.d(text=u"VoLTE视频彩铃").exists 
+        assert self.d(text=u"VoLTE视频彩铃").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
 
@@ -37,7 +37,7 @@ class Test_aikan1():
         # 学而思
         self.d(text=u"学而思").click()
         sleep(2)
-        assert self.d(text=u"学而思").exists 
+        assert self.d(text=u"学而思").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
 
@@ -49,7 +49,7 @@ class Test_aikan1():
         # 阿里体育
         self.d(text=u"阿里体育").click()
         sleep(2)
-        assert self.d(text=u"阿里体育").exists 
+        assert self.d(text=u"阿里体育").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
 
@@ -61,7 +61,7 @@ class Test_aikan1():
         # 精品教育
         self.d(text=u"精品教育").click()
         sleep(2)
-        assert self.d(text=u"精品教育").exists 
+        assert self.d(text=u"精品教育").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
         # 换一换两次

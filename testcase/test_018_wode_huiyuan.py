@@ -84,12 +84,12 @@ class Test_wode():
         sleep(2)
         self.d.click(0.829, 0.652)
         sleep(5)
-        assert self.d(text=u'百视通VIP会员').exists
+        assert self.d(text=u'百视通VIP会员').wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
         self.d.click(0.866, 0.828)
         sleep(5)
-        assert self.d(text=u'百视通VIP会员').exists
+        assert self.d(text=u'百视通VIP会员').wait(exists=True,timeout=20)
         self.d.press("back")
         self.d.press("back")
 
@@ -103,7 +103,7 @@ class Test_wode():
         # 咪咕会员VIP
         self.d(resourceId="com.chinamobile.cloudapp:id/btn_order").click()
         sleep(5)
-        assert self.d(text=u'咪咕VIP会员').exists
+        assert self.d(text=u'咪咕VIP会员').wait(exists=True,timeout=20)
         self.d.press("back")
         self.d.press("back")
 

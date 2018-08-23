@@ -24,7 +24,7 @@ class Test_hot():
         if (self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_left_return").exists):
             self.d.press("back")
         else:
-            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_back").exists 
+            assert self.d(resourceId="com.chinamobile.cloudapp:id/video_back").wait(exists=True,timeout=20)
             self.d.press("back")
 
     @allure.step('热点页面--热门榜单')
@@ -32,7 +32,7 @@ class Test_hot():
         # 热门榜单
         self.d(text=u"热门榜单").click()
         sleep(2)
-        assert self.d(text=u"电影").exists 
+        assert self.d(text=u"电影").wait(exists=True,timeout=20)
         sleep(2)
         self.d(text=u"电视剧").click()
         sleep(2)

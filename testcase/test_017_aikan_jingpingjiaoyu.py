@@ -26,7 +26,7 @@ class Test_aikan4():
         sleep(5)
         # 幼儿
         self.d(text=u"幼儿").click()
-        assert self.d(text=u"幼儿").exists ==True
+        assert self.d(text=u"幼儿").wait(exists=True,timeout=20)==True
         sleep(5)
         # 向上滑动三次次
         for i in range(3):
@@ -43,7 +43,7 @@ class Test_aikan4():
         sleep(5)
         # 小学
         self.d(text=u"小学").click()
-        assert self.d(text=u"小学").exists 
+        assert self.d(text=u"小学").wait(exists=True,timeout=20)
         sleep(5)
         # 向上滑动三次次
         for i in range(3):
@@ -60,7 +60,7 @@ class Test_aikan4():
         sleep(5)
         # 初中
         self.d(text=u"初中").click()
-        assert self.d(text=u"初中").exists 
+        assert self.d(text=u"初中").wait(exists=True,timeout=20)
         sleep(5)
         # 向上滑动三次次
         for i in range(3):

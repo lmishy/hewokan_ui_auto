@@ -31,7 +31,7 @@ class Test_wode4():
         self.d(description=u"已过期").click()
         sleep(2)
         self.d(description=u"未使用").click()
-        assert self.d(description=u"未使用").exists == True
+        assert self.d(description=u"未使用").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(5)
 

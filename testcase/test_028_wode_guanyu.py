@@ -30,17 +30,17 @@ class Test_wode10():
         # 关于我们
         self.d(text=u"关于我们").click()
         sleep(2)
-        assert self.d(text=u"关于").exists 
+        assert self.d(text=u"关于").wait(exists=True,timeout=20)
         sleep(2)
         self.d(text=u"应用简介").click()
         sleep(5)
-        assert self.d(text=u"应用简介").exists 
+        assert self.d(text=u"应用简介").wait(exists=True,timeout=20)
         sleep(2)
         self.d.press("back")
         sleep(2)
         self.d(text=u"用户协议").click()
         sleep(5)
-        assert self.d(text=u"和我看用户协议").exists 
+        assert self.d(text=u"和我看用户协议").wait(exists=True,timeout=20)
         sleep(2)
         # 向上滑动
         sleep(5)
@@ -58,7 +58,7 @@ class Test_wode10():
         sleep(2)
         self.d.press("back")
         sleep(5)
-        assert self.d(text=u"个人中心").exists
+        assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         sleep(5)
 
 

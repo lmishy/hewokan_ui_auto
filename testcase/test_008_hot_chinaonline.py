@@ -25,7 +25,7 @@ class Test_chinaplus():
         self.d(resourceId="com.chinamobile.cloudapp:id/txt1").click()
         sleep(2)
         if (self.d(text=u"一带一路文化长廊").exists):
-            assert self.d(text=u"一带一路文化长廊").exists 
+            assert self.d(text=u"一带一路文化长廊").wait(exists=True,timeout=20)
             # banner
             self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
             sleep(5)
@@ -51,27 +51,19 @@ class Test_chinaplus():
     def test_radio(self):
         self.d(resourceId="com.chinamobile.cloudapp:id/pic2").click()
         sleep(5)
-        assert self.d(text=u"首页").exists 
+        assert self.d(text=u"首页").wait(exists=True,timeout=20)
         sleep(2)
         self.d(text=u"首页").click()
         sleep(2)
         self.d(text=u"收音机").click()
         sleep(5)
-        self.d(text=u"推荐栏目").wait(timeout=10)
-        assert self.d(text=u"推荐栏目").exists 
-        sleep(2)
         self.d(text=u"分类").click()
         sleep(5)
-        self.d(text=u"新闻").wait(timeout=10)
-        assert self.d(text=u"新闻").exists 
-        sleep(2)
-        self.d(text=u"专题").click()
-        sleep(5)
+        self.d(text=u"专题").wait(timeout=10)
+        assert self.d(text=u"专题").wait(exists=True,timeout=20)
         self.d(text=u"排行榜").click()
         sleep(5)
-        self.d(text=u"节目榜单").wait(timeout=10)
-        assert self.d(text=u"节目榜单").exists 
-        sleep(5)
+        assert self.d(text=u"排行榜").wait(exists=True, timeout=20)
         self.d.press("back")
         sleep(5)
 
@@ -81,7 +73,7 @@ class Test_chinaplus():
         self.d(resourceId="com.chinamobile.cloudapp:id/pic3").click()
         sleep(5)
         self.d(text=u"Cinitalia").wait(timeout=10)
-        assert self.d(text=u"Cinitalia").exists 
+        assert self.d(text=u"Cinitalia").wait(exists=True,timeout=20)
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
         sleep(5)
@@ -102,7 +94,8 @@ class Test_chinaplus():
     @allure.step("更多")
     def test_more(self):
         self.d(resourceId="com.chinamobile.cloudapp:id/txt4").click()
-        sleep(1)
+        sleep(2)
+        assert self.d(text=u"下载").wait(exists=True, timeout=20)
         self.d.press("back")
         sleep(5)
 

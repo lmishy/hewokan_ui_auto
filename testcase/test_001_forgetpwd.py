@@ -33,7 +33,7 @@ class Test_forgetpwd():
         # 获取验证码
         self.d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click(timeout=20)
         sleep(5)
-        assert self.d(text=u"找回密码").exists 
+        assert self.d(text=u"找回密码").wait(exists=True,timeout=20)
         sleep(5)
 
 

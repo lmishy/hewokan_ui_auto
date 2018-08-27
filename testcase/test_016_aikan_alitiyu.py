@@ -21,16 +21,16 @@ class Test_aikan3():
     @allure.step('爱看--阿里体育')
     def test_aikan_alitiyu(self):
         # 切换爱看tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click(timeout=20)
         sleep(5)
         # 阿里体育
-        self.d(text=u"阿里体育").click()
+        self.d(text=u"阿里体育").click(timeout=20)
         sleep(5)
         # 篮球
-        self.d(text=u"篮球").click()
+        self.d(text=u"篮球").click(timeout=20)
         sleep(5)
         # 小组赛
-        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click(timeout=20)
         sleep(10)
         self.d.press("back")
         sleep(2)
@@ -38,7 +38,7 @@ class Test_aikan3():
         self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
 
         # 3X3联赛广州站
-        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click(timeout=20)
         sleep(10)
         self.d.press("back")
         sleep(2)

@@ -83,7 +83,7 @@ class Test_cailing():
         assert self.d(text=u"VoLTE视频彩铃").exists 
         sleep(6)
         # 环球掠影
-        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=1).click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=1).click(timeout=20)
         sleep(2)
         assert self.d(resourceId="com.chinamobile.cloudapp:id/iv_phone_center").wait(exists=True,timeout=20)
         self.d.press("back")
@@ -220,11 +220,11 @@ class Test_cailing():
             sleep(2)
             self.d.press("back")
             self.d.press("back")
-
         else:
-            self.d(resourceId="com.chinamobile.cloudapp:id/rl_my_diy").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/rl_my_diy").click(timeout=20)
             sleep(2)
             self.d.press("back")
+        self.d.press("back")
 
 
         # 我的点赞

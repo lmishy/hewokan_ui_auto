@@ -19,13 +19,13 @@ class Test_aikan4():
     @allure.step('爱看--精品教育--幼儿')
     def test_aikan_youer(self):
         # 切换爱看tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click(timeout=20)
         sleep(3)
         # 精品教育
-        self.d(text=u"精品教育").click()
+        self.d(text=u"精品教育").click(timeout=20)
         sleep(5)
         # 幼儿
-        self.d(text=u"幼儿").click()
+        self.d(text=u"幼儿").click(timeout=20)
         assert self.d(text=u"幼儿").wait(exists=True,timeout=20)==True
         sleep(5)
         # 向上滑动三次次
@@ -39,10 +39,10 @@ class Test_aikan4():
         self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
         sleep(3)
         # 精品教育
-        self.d(text=u"精品教育").click()
+        self.d(text=u"精品教育").click(timeout=20)
         sleep(5)
         # 小学
-        self.d(text=u"小学").click()
+        self.d(text=u"小学").click(timeout=20)
         assert self.d(text=u"小学").wait(exists=True,timeout=20)
         sleep(5)
         # 向上滑动三次次
@@ -53,13 +53,13 @@ class Test_aikan4():
     @allure.step('爱看--精品教育--初中')
     def test_aikan_youer(self):
         # 切换爱看tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click(timeout=20)
         sleep(3)
         # 精品教育
-        self.d(text=u"精品教育").click()
+        self.d(text=u"精品教育").click(timeout=20)
         sleep(5)
         # 初中
-        self.d(text=u"初中").click()
+        self.d(text=u"初中").click(timeout=20)
         assert self.d(text=u"初中").wait(exists=True,timeout=20)
         sleep(5)
         # 向上滑动三次次
@@ -70,13 +70,13 @@ class Test_aikan4():
     @allure.step('爱看--精品教育--高中')
     def test_aikan_youer(self):
         # 切换爱看tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_4").click(timeout=20)
         sleep(3)
         # 精品教育
-        self.d(text=u"精品教育").click()
+        self.d(text=u"精品教育").click(timeout=20)
         sleep(5)
         # 高中
-        self.d(text=u"高中").click()
+        self.d(text=u"高中").click(timeout=20)
         assert self.d(text=u"高中")
         sleep(5)
         # 向上滑动三次次

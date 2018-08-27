@@ -19,7 +19,7 @@ class Test_yingshi2():
         sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
-    @pytest.mark.skip(resean= 'other')
+
     @allure.step('影视--即将上映')
     def test_yingshi_jjsy(self):
         # 切换影视tab
@@ -37,18 +37,18 @@ class Test_yingshi2():
         else:
             raise Exception(u"没有这个分区！")
 
-    @pytest.mark.skip(resean='other')
+
     @allure.step('影视--每日限免')
     def test_yingshi_mrxm(self):
         # 切换影视tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click(timeout=20)
         sleep(2)
         # 向上滑动
         sleep(5)
         self.d.swipe(0.5, 0.7, 0.5, 0.3, 0.5)
         sleep(3)
         if (self.d(resourceId="com.chinamobile.cloudapp:id/title", text=u"每日限免").exists):
-            self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic", className="android.widget.ImageView", instance=3).click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic", className="android.widget.ImageView", instance=3).click(timeout=20)
             sleep(3)
             self.d.press("back")
 
@@ -59,7 +59,7 @@ class Test_yingshi2():
     @allure.step('影视--新片速递')
     def test_yingshi_xpsd(self):
         # 切换影视tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click(timeout=20)
         sleep(2)
         # 向上滑动
         sleep(5)
@@ -73,15 +73,15 @@ class Test_yingshi2():
         self.d.press("back")
         sleep(2)
         # 换一换
-        self.d(text=u"换一换").click()
+        self.d(text=u"换一换").click(timeout=20)
         sleep(2)
         # 更多精彩
-        self.d(text=u"更多精彩").click()
+        self.d(text=u"更多精彩").click(timeout=20)
         sleep(5)
         assert self.d(text=u"电影").wait(exists=True,timeout=20)
         sleep(2)
         # 全部电影
-        self.d(text=u"内地").click()
+        self.d(text=u"内地").click(timeout=20)
         sleep(2)
         self.d(text=u"美国").click()
         sleep(2)
@@ -109,11 +109,11 @@ class Test_yingshi2():
         sleep(3)
         self.d.press("back")
 
-    @pytest.mark.skip(resean='other')
+
     @allure.step('影视--重磅热播')
     def test_yingshi_zbrb(self):
         # 切换影视tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click(timeout=20)
         sleep(2)
         # 向上滑动
         sleep(5)
@@ -121,14 +121,14 @@ class Test_yingshi2():
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
         # 点击任意一个节目
-        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click(timeout=20)
         sleep(5)
         self.d.press("back")
         # 换一换
         sleep(5)
-        self.d(text=u"换一换", className="android.widget.TextView", instance=1).click()
+        self.d(text=u"换一换", className="android.widget.TextView", instance=1).click(timeout=20)
         # 更多精彩
-        self.d(text=u"更多精彩", className="android.widget.TextView", instance=1).click()
+        self.d(text=u"更多精彩", className="android.widget.TextView", instance=1).click(timeout=20)
         sleep(5)
         assert self.d(text=u"电视剧").wait(exists=True,timeout=20)
         self.d.press("back")

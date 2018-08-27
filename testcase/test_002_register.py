@@ -1,7 +1,7 @@
 #coding=utf-8
 import uiautomator2 as u2
 from time import sleep
-from po import ExcuteCase as E, proxy
+from po import  proxy
 import pytest
 import allure
 
@@ -21,12 +21,12 @@ class Test_register():
     def test_register(self):
 
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=5)
         sleep(2)
         # 立即注册
-        self.d(resourceId="com.chinamobile.cloudapp:id/tv_registing").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/tv_registing").click(timeout=20)
         sleep(2)
         assert self.d(text=u"注册").exists
         # 输入手机号
@@ -36,16 +36,14 @@ class Test_register():
         self.d(resourceId="com.chinamobile.cloudapp:id/et_pwd").set_text("qqq123")
         sleep(2)
         # 同意协议
-        self.d(resourceId="com.chinamobile.cloudapp:id/cb_agreement").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/cb_agreement").click(timeout=20)
         sleep(5)
         # 下一步
-        self.d(text=u'下一步').click()
+        self.d(text=u'下一步').click(timeout=20)
         sleep(5)
 
         assert self.d(text=u"获取验证码").exists
         sleep(5)
-        # 获取验证码
-        # d(resourceId="com.chinamobile.cloudapp:id/button_get_sms").click()
 
 
 

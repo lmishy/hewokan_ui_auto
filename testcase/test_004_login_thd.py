@@ -1,7 +1,7 @@
 #coding=utf-8
 import uiautomator2 as u2
 from time import sleep
-from po import ExcuteCase as E, proxy
+from po import proxy
 import pytest
 import allure
 
@@ -21,15 +21,15 @@ class Test_login_thd():
     def test_login_wechat(self):
 
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(2)
-        assert self.d(text=u"登录和我看").exists
+        assert self.d(text=u"登录和我看").wait(exists=True,timeout=20)
 
 
         # 微信
-        self.d(text=u"微信账号登录").click()
+        self.d(text=u"微信账号登录").click(timeout=20)
         sleep(5)
         if (self.d(text=u"登录微信").exists):
             assert self.d(text=u"登录微信").exists
@@ -44,18 +44,18 @@ class Test_login_thd():
     def test_login_weibo(self):
 
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(5)
         assert self.d(text=u"登录和我看").exists
 
         # 新浪
         sleep(2)
-        self.d(text=u"微博账号登录").click()
+        self.d(text=u"微博账号登录").click(timeout=20)
         sleep(10)
         if (self.d(resourceId="com.sina.weibo:id/ivUserPic").exists):
-            assert self.d(resourceId="com.sina.weibo:id/ivUserPic").exists == True
+            assert self.d(resourceId="com.sina.weibo:id/ivUserPic").exists
             # d.press("back")
             # sleep(2)
             self.d.press("back")
@@ -70,11 +70,11 @@ class Test_login_thd():
     def test_login_qq(self):
 
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(2)
-        assert self.d(text=u"登录和我看").exists
+        assert self.d(text=u"登录和我看").wait(exists=True,timeout=20)
 
         # QQ账号登录
         sleep(2)

@@ -22,10 +22,10 @@ class Test_wode5():
     def test_wode_hebao(self):
 
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 和包
-        self.d(resourceId="com.chinamobile.cloudapp:id/andpacket").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/andpacket").click(timeout=20)
         sleep(6)
         assert self.d(text=u"和包").wait(exists=True,timeout=20)
         self.d.press("back")

@@ -22,12 +22,12 @@ class Test_wode7():
     def test_wode_139youxiang(self):
         
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 向上滑动
         self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
         # 139邮箱
-        self.d(text=u"139邮箱").click()
+        self.d(text=u"139邮箱").click(timeout=20)
         sleep(6)
         assert self.d(text=u"139邮箱").wait(exists=True,timeout=20)
         self.d.press("back")

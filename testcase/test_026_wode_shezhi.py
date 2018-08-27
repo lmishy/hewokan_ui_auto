@@ -28,12 +28,12 @@ class Test_wode8():
         self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
 
         # 设置
-        self.d(text=u"设置").click()
+        self.d(text=u"设置").click(timeout=20)
         sleep(2)
         assert self.d(text=u"设置").wait(exists=True,timeout=20)
         sleep(5)
         # 修改密码
-        self.d(resourceId="com.chinamobile.cloudapp:id/layout_change_psd").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/layout_change_psd").click(timeout=20)
         sleep(2)
         assert self.d(text=u"修改密码").wait(exists=True,timeout=20)
         self.d(resourceId="com.chinamobile.cloudapp:id/et_old_pwd").set_text("12346")
@@ -47,13 +47,13 @@ class Test_wode8():
         self.d.press("back")
         sleep(2)
         # 开启2G/3G/4G网络自动播放
-        self.d(resourceId="com.chinamobile.cloudapp:id/checkBox").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/checkBox").click(timeout=20)
         sleep(2)
         # 关闭2G/3G/4G网络自动播放
-        self.d(resourceId="com.chinamobile.cloudapp:id/checkBox").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/checkBox").click(timeout=20)
         sleep(2)
         # 清理缓存
-        self.d(resourceId="com.chinamobile.cloudapp:id/rl_clear_cache").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/rl_clear_cache").click(timeout=20)
         sleep(2)
         assert self.d(text=u'0K').wait(exists=True,timeout=20)
         self.d.press("back")

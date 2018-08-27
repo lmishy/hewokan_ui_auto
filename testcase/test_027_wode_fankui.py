@@ -22,13 +22,13 @@ class Test_wode9():
     def test_wode_fankui(self):
 
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 向上滑动
         self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
 
         # 设置
-        self.d(text=u"意见反馈").click()
+        self.d(text=u"意见反馈").click(timeout=20)
         sleep(2)
         assert self.d(text=u"意见反馈").wait(exists=True,timeout=20)
         # 输入文字

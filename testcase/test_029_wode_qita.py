@@ -21,22 +21,22 @@ class Test_wode11():
     @allure.step('我的--换头像')
     def test_wode_qita_change(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         # 换头像
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(5)
-        self.d(resourceId="com.chinamobile.cloudapp:id/textView1").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/textView1").click(timeout=20)
         sleep(2)
         if (self.d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").exists):
-            self.d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").click()
+            self.d(resourceId="com.oppo.camera:id/camera_from_other_app_close_btn").click(timeout=20)
         else:
             self.d.press("back")
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/textView2").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/textView2").click(timeout=20)
         sleep(2)
         self.d.press("back")
         if (self.d(text=u"个人中心").exists):
@@ -49,14 +49,14 @@ class Test_wode11():
     @allure.step('我的--签到')
     def test_wode_qiandao(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         assert self.d(text=u"个人中心").wait(exists=True,timeout=20)
         # 签到
-        self.d(resourceId="com.chinamobile.cloudapp:id/sign_button").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/sign_button").click(timeout=20)
         sleep(2)
         if (self.d(text=u"未签到").exists):
-            self.d(resourceId="headerUpP").click()
+            self.d(resourceId="headerUpP").click(timeout=20)
             sleep(2)
             assert self.d(text=u"已签到").wait(exists=True,timeout=20)
         else:

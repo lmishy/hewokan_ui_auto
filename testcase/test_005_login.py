@@ -1,7 +1,7 @@
 #coding=utf-8
 import uiautomator2 as u2
 from time import sleep
-from po import proxy,ExcuteCase as E
+from po import proxy
 import pytest
 import allure
 
@@ -20,9 +20,9 @@ class Test_login():
     @allure.step("手机登录失败")
     def test_login_fail(self):
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(2)
         # 输入手机号码
         self.d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('18428027801')
@@ -31,7 +31,7 @@ class Test_login():
         self.d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('123245')
         sleep(2)
         # 登录
-        self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click(timeout=20)
         sleep(5)
         self.d(text=u"登录和我看").wait(timeout=10)
         assert self.d(text=u"登录和我看").exists 
@@ -40,9 +40,9 @@ class Test_login():
     @allure.step("手机登录成功")
     def test_login_seccess(self):
         # 我的
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/head_pic").click(timeout=20)
         sleep(2)
         # 输入手机号码
         self.d(resourceId="com.chinamobile.cloudapp:id/edittext_phone").set_text('13981817893')
@@ -51,7 +51,7 @@ class Test_login():
         self.d(resourceId="com.chinamobile.cloudapp:id/edittext_pwd").set_text('zhou1xin')
         sleep(2)
         # 登录
-        self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/button_login").click(timeout=20)
         sleep(5)
         self.d(text=u"个人中心").wait(timeout=10)
         assert self.d(text=u"个人中心").exists 

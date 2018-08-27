@@ -22,13 +22,13 @@ class Test_wode():
     def test_huiyuan_xieyi(self):
 
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 会员中心
-        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click(timeout=20)
         sleep(2)
         # 查看用户协议
-        self.d(resourceId="com.chinamobile.cloudapp:id/tv_user_agreement").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/tv_user_agreement").click(timeout=20)
         sleep(6)
         # 向上滑动六次
         for i in range(6):
@@ -40,17 +40,17 @@ class Test_wode():
     @allure.step('我的--芒果VIP')
     def test_huiyuan_manggo(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 会员中心
-        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click(timeout=20)
         sleep(2)
         # 芒果TV
-        self.d.click(0.821, 0.321)
+        self.d.click(0.316, 0.82)
         sleep(5)
         assert self.d(text=u'芒果VIP会员').exists
         sleep(5)
-        self.d(description=u"立即订购").click()
+        self.d(description=u"立即订购").click(timeout=20)
         sleep(5)
         assert self.d(text=u'芒果TV特惠流量包').exists
         sleep(2)
@@ -66,13 +66,13 @@ class Test_wode():
     @allure.step('我的--百视通VIP')
     def test_huiyuan_baishitong(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 会员中心
-        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click(timeout=20)
         sleep(2)
         # 百视通VIP
-        self.d.click(0.546, 0.571)
+        self.d.click(0.451, 0.306)
         sleep(5)
         assert self.d(text=u'百视通VIP会员').exists
         sleep(2)
@@ -96,12 +96,12 @@ class Test_wode():
     @allure.step('我的--咪咕会员VIP')
     def test_huiyuan_migu(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 会员中心
-        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/member_area").click(timeout=20)
         # 咪咕会员VIP
-        self.d(resourceId="com.chinamobile.cloudapp:id/btn_order").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/btn_order").click(timeout=20)
         sleep(5)
         assert self.d(text=u'咪咕VIP会员').wait(exists=True,timeout=20)
         self.d.press("back")

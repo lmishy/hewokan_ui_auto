@@ -20,15 +20,15 @@ class Test_xianmian():
 
     @allure.step('热点--banner')
     def test_xianmian_banner(self):
-
         # 限免专区
-        self.d(text=u"限免专区").click()
+        sleep(5)
+        self.d(text=u"限免专区").click(timeout=20)
         sleep(5)
         assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)
         # 点击banner
         if (self.d(resourceId="com.chinamobile.cloudapp:id/image").exists):
-            self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=20)
             sleep(5)
             self.d.press("back")
         else:
@@ -37,12 +37,13 @@ class Test_xianmian():
     @allure.step('热点--即将转免')
     def test_xianmian_jijian(self):
         # 限免专区
-        self.d(text=u"限免专区").click()
+        sleep(5)
+        self.d(text=u"限免专区").click(timeout=20)
         sleep(5)
         assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)
         # 即将限免的一部
-        if (self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic").exists):
+        if (self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic").wait(exists=True,timeout=20)):
             self.d(resourceId="com.chinamobile.cloudapp:id/cover_pic").click()
             sleep(5)
             self.d.press("back")
@@ -52,7 +53,8 @@ class Test_xianmian():
     @allure.step('热点--高分电影大放送')
     def test_xianmian_gaofeng(self):
         # 限免专区
-        self.d(text=u"限免专区").click()
+        sleep(5)
+        self.d(text=u"限免专区").click(timeout=20)
         sleep(5)
         assert self.d(text=u"限免专区").wait(exists=True,timeout=20)
         sleep(5)

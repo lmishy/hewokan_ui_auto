@@ -22,21 +22,21 @@ class Test_wode1():
     @allure.step('我的--分享')
     def test_wode_fenxiang(self):
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 分享有奖
-        self.d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/welfare_area").click(timeout=20)
         sleep(5)
         # 邀请记录
-        self.d(resourceId="btn1").click()
+        self.d(resourceId="btn1").click(timeout=20)
         sleep(5)
         assert self.d(description=u"用户名").wait(exists=True,timeout=20)
         self.d.press("back")
         sleep(2)
         # 分享邀请好友
-        self.d(resourceId="inviteBtn").click()
+        self.d(resourceId="inviteBtn").click(timeout=20)
         sleep(5)
-        self.d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/btn_share_weChat").click(timeout=20)
         sleep(2)
         self.d.press("back")
         self.d.press("back")

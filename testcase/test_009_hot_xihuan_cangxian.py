@@ -24,12 +24,12 @@ class Test_xihuan_cangxian():
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
         # 选择一个节目
-        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image", className="android.widget.ImageView", instance=2).click(timeout=20)
         sleep(5)
         if (self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").exists):
-            self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click(timeout=20)
             sleep(2)
-            self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/video_collect_icon").click(timeout=20)
             sleep(2)
         else:
             pass
@@ -38,13 +38,13 @@ class Test_xihuan_cangxian():
         for i in range(2):
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
-        self.d(text=u"换一换").click()
+        self.d(text=u"换一换").click(timeout=20)
         sleep(2)
-        self.d(text=u"更多精彩").click()
+        self.d(text=u"更多精彩").click(timeout=20)
         sleep(5)
         assert self.d(text=u"电影").exists
         sleep(2)
-        self.d(text=u"内地").click()
+        self.d(text=u"内地").click(timeout=20)
         sleep(2)
         self.d(text=u"美国").click()
         sleep(2)
@@ -78,7 +78,7 @@ class Test_xihuan_cangxian():
         sleep(5)
         self.d.press("back")
         sleep(3)
-        self.d(text=u"换一换").click()
+        self.d(text=u"换一换").click(timeout=20)
         sleep(5)
 
 

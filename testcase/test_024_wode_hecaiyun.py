@@ -22,10 +22,10 @@ class Test_wode6():
     def test_wode_hecaiyun(self):
         
         # 切换我的tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_5").click(timeout=20)
         sleep(2)
         # 和彩云
-        self.d(text=u"和彩云").click()
+        self.d(text=u"和彩云").click(timeout=20)
         sleep(5)
         self.d.press("back")
         sleep(2)

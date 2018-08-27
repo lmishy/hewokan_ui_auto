@@ -1,7 +1,7 @@
 #coding=utf-8
 import uiautomator2 as u2
 from time import sleep
-from po import ExcuteCase as E, proxy
+from po import proxy
 import pytest
 import allure
 
@@ -17,25 +17,26 @@ class Test_chinaplus():
         sleep(5)
         self.d.app_stop("com.chinamobile.cloudapp")
 
+
     @allure.step("热点--一带一路")
     def test_yidaiyilu(self):
 
         # 一带一路文化长廊
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/txt1").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/pic1").click(timeout=20)
         sleep(2)
         if (self.d(text=u"一带一路文化长廊").exists):
             assert self.d(text=u"一带一路文化长廊").wait(exists=True,timeout=20)
             # banner
-            self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=20)
             sleep(5)
             self.d.press("back")
             sleep(2)
             # 列表内容
-            self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+            self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click(timeout=20)
             sleep(2)
             if (self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").exists):
-                self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click()
+                self.d(resourceId="com.chinamobile.cloudapp:id/videoPauseImg").click(timeout=20)
             else:
                 pass
             sleep(5)
@@ -47,9 +48,10 @@ class Test_chinaplus():
             # raise Exception(u"用例异常！")
         sleep(5)
 
-    @allure.step("热点--radio")
+    @allure.step("热点--ChinaRadio")
     def test_radio(self):
-        self.d(resourceId="com.chinamobile.cloudapp:id/pic2").click()
+        sleep(2)
+        self.d(resourceId="com.chinamobile.cloudapp:id/pic2").click(timeout=20)
         sleep(5)
         assert self.d(text=u"首页").wait(exists=True,timeout=20)
         sleep(2)
@@ -67,22 +69,23 @@ class Test_chinaplus():
         self.d.press("back")
         sleep(5)
 
+
     @allure.step("热点--Cinitalia")
     def test_Cinitalia(self):
         # Cinitalia
-        self.d(resourceId="com.chinamobile.cloudapp:id/pic3").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/pic3").click(timeout=20)
         sleep(5)
         self.d(text=u"Cinitalia").wait(timeout=10)
         assert self.d(text=u"Cinitalia").wait(exists=True,timeout=20)
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/image").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image").click(timeout=20)
         sleep(5)
         for i in range(3):
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
             sleep(1)
         self.d.press("back")
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/image_mid").click(timeout=20)
         sleep(5)
         for i in range(3):
             self.d.swipe(0.5, 0.8, 0.5, 0.2, 0.5)
@@ -91,9 +94,10 @@ class Test_chinaplus():
         self.d.press("back")
         sleep(5)
 
+
     @allure.step("更多")
     def test_more(self):
-        self.d(resourceId="com.chinamobile.cloudapp:id/txt4").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/txt4").click(timeout=20)
         sleep(2)
         assert self.d(text=u"下载").wait(exists=True, timeout=20)
         self.d.press("back")

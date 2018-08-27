@@ -21,14 +21,14 @@ class Test_yingshi3():
     @allure.step('影视--搜索--数字')
     def test_search_shuzi(self):
         # 切换影视tab
-        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/root_bottom_home_tab_3").click(timeout=20)
         sleep(2)
         # 搜索功能-数字
-        self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_right_search").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/home_cloud_title_right_search").click(timeout=20)
         sleep(2)
         self.d(resourceId="com.chinamobile.cloudapp:id/et_content").set_text(u"12")
         sleep(2)
-        self.d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click()
+        self.d(resourceId="com.chinamobile.cloudapp:id/title_right_img_2").click(timeout=20)
         sleep(5)
         assert self.d(text=u"12-喇叭花-伴奏").wait(exists=True, timeout=20)
         sleep(5)
